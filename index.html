@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLOG</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./CSS/style.css">
+</head>
+<body>
+    <header class="active">
+        <a href="#" class="logo">MinhPhuoc.</a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav>
+            <a href="#" class="active">Trang chủ</a>
+            <a href="#">Bài viết</a>
+            <a href="#">Hồ sơ</a>
+            <a href="#">Liên hệ</a>
+        </nav>
+    </header>
+
+    <div class="bars-box active">
+        <div class="bar" style="--i:6;"></div>
+        <div class="bar" style="--i:5;"></div>
+        <div class="bar" style="--i:4;"></div>
+        <div class="bar" style="--i:3;"></div>
+        <div class="bar" style="--i:2;"></div>
+        <div class="bar" style="--i:1;"></div>
+    </div>
+
+    <section class="home active" id="home" style="padding-bottom: 7rem;">
+        <div class="home-detail">
+            <h1>Hoàng Nguyễn Minh Phước</h1>
+            <h2>I'm a
+                <span style="--i:4;" data-text="Student">Student</span>
+                <span style="--i:3;" data-text="Web Developer">Web Developer</span>
+                <span style="--i:2;" data-text="Backend Developer">Backend Developer</span>
+                <span style="--i:1;" data-text="Mobile Developer">Mobile Developer</span>
+            </h2>
+            <p>Chào mừng bạn đến với blog của tôi, tôi là một lập trình viên với 2 năm học Java (2022 - 2024) và mới bắt đầu học JavaScript vào năm 2024. Blog này là nơi tôi chia sẻ những kiến thức và kinh nghiệm trong hành trình lập trình của mình. Hy vọng bạn sẽ tìm thấy thông tin hữu ích và cùng tôi phát triển kỹ năng lập trình!</p>
+            <div class="btn-sci">
+                <span class="follow">Follow me</span>
+                <div class="sci">
+                    <a href="https://github.com/HNMPhuoc"><i class='bx bxl-github'></i></a>
+                    <a href="https://www.instagram.com/minhphuochoangnguyen/"><i class='bx bxl-instagram-alt'></i></a>
+                    <a href="https://www.facebook.com/minhphuoc.hoangnguyen.5"><i class='bx bxl-facebook'></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="home-img">
+            <div class="img-box">
+                <div class="img-item">
+                    <img src="./images/phuoc.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="posts" id="posts"  style="padding-bottom: 7rem;">
+        <h2 class="heading">Bài viết của tôi</h2>
+        <div class="posts-container">
+            <div class="posts-box">
+                <div class="row">
+                    <div class="col-4">
+                        <img src="./images/post1.jpeg" alt="Post 1" class="post-img">
+                    </div>
+                    <div class="col-8">
+                        <h3 class="post-title">Java vs. Javascript: Đâu là ngôn ngữ dành cho bạn?</h3>
+                        <p class="post-content">Java và JavaScript là hai trong số những ngôn ngữ lập trình phổ biến nhất. Mặc dù cả hai đều có từ "Java" trong tên, chúng thực sự rất khác biệt.</p>
+                    </div>
+                </div>
+            </div>   
+            <div class="posts-box">
+                <div class="row">
+                    <div class="col-4">
+                        <img src="./images/post2.jpg" alt="Post 2" class="post-img">
+                    </div>
+                    <div class="col-8">
+                        <h3 class="post-title">Tạo Queue bằng JavaScript</h3>
+                        <p class="post-content">Tạo Queue và triển khai mộtsố hoạt động của nó bằng JavaScript Điều kiện tiên quyết: Phiên bản JavaScript: ECMAScript 2015 (ES6)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="posts-box">
+                <div class="row">
+                    <div class="col-4">
+                        <img src="./images/post3.jpg" alt="Post 3" class="post-img">
+                    </div>
+                    <div class="col-8">
+                        <h3 class="post-title">6 Tips Để Code Javascript Luôn Sạch Và Dễ Đọc</h3>
+                        <p class="post-content">Việc để code luôn "sạch" và dễ đọc là một nghệ thuật trong lập trình, để nắm được những nghệ thuật đó thì chúng ta cùng nhau tìm hiểu qua bài viết này nhé.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="posts-box">
+                <div class="row">
+                    <div class="col-4">
+                        <img src="./images/post4.jpg" alt="Post 4" class="post-img">
+                    </div>
+                    <div class="col-8">
+                        <h3 class="post-title">Không Nên Học Javascript, Liệu Có Đúng Như Vậy?</h3>
+                        <p class="post-content">Hôm nay mình sẽ chia sẻ một chút về Javascript - một ngôn ngữ lập trình đa năng mà mọi người cho rằng không nên học, nhưng tôi thì không đồng tình.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="posts-box">
+                <div class="row">
+                    <div class="col-4">
+                        <img src="./images/post5.jpg" alt="Post 5" class="post-img">
+                    </div>
+                    <div class="col-8">
+                        <h3 class="post-title">Exception Trong Javascript Được Xử Lý Như Thế Nào?</h3>
+                        <p class="post-content">Giống bất kỳ ngôn ngữ nào, Javascript cũng sẽ gặp các tình huống lỗi như: undefined, null, JSON.parse() fail… Vậy ta xử lý ngoại lệ trong Javascript như thế nào?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="posts-box">
+                <div class="row">
+                    <div class="col-4">
+                        <img src="./images/post6.jpg" alt="Post 6" class="post-img">
+                    </div>
+                    <div class="col-8">
+                        <h3 class="post-title">Async/Await Trong Javascript Có Làm Khó Được Bạn?</h3>
+                        <p class="post-content">Đây là cặp keyword vô cùng mạnh mẽ trong Javascript. Hiểu được Async/Await sẽ giúp chúng ta viết code dễ dàng, ngắn gọn và hiệu quả hơn nhiều.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="posts-box">
+                <div class="row">
+                    <div class="col-4">
+                        <img src="./images/post7.jpg" alt="Post 7" class="post-img">
+                    </div>
+                    <div class="col-8">
+                        <h3 class="post-title">Có Nên Chọn JavaScript Là Ngôn Ngữ Lập Trình Đầu Tiên?</h3>
+                        <p class="post-content">Chọn lựa ngôn ngữ lập trình đầu tiên giữa hàng trăm ngôn ngữ lập trình sẽ rất đau đầu và thú vị. Tôi chọn JavaScript là ngôn ngữ đầu tiên. Tại sao thế?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="posts-box">
+                <div class="row">
+                    <div class="col-4">
+                        <img src="./images/post8.jpg" alt="Post 8" class="post-img">
+                    </div>
+                    <div class="col-8">
+                        <h3 class="post-title">OOP Trong Javascript Có Gì Khác Với Ngôn Ngữ Khác?</h3>
+                        <p class="post-content">OOP được biết đến như là một định nghĩa về lập trình hướng đối tượng. Trong bài này chúng ta cùng tìm hiểu về OOP trong Javascript nhé.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="posts-box">
+                <div class="row">
+                    <div class="col-4">
+                        <img src="./images/post9.jpg" alt="Post 9" class="post-img">
+                    </div>
+                    <div class="col-8">
+                        <h3 class="post-title">Mọi Thứ Bạn Cần Biết Về Function - Javascript</h3>
+                        <p class="post-content">Các hàm (Function) là một trong những nền tảng cơ bản trong Javascript. Vậy bạn đã nắm hết những kiến thức về Function trong Javascript chưa?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="resume" id="resume" style="padding-bottom: 7rem;">
+        <div class="resume-container">
+            <div class="resume-box">
+                <h2>Hồ sơ cá nhân</h2>
+                <p class="desc">Chào bạn, đây là nơi tôi chia sẻ về quá trình học tập, kỹ năng và kinh nghiệm làm việc của mình. Hy vọng bạn sẽ tìm thấy những thông tin hữu ích về hành trình nghề nghiệp của tôi.</p>
+                <button class="resume-btn active">Chứng Chỉ</button>
+                <button class="resume-btn">Kĩ Năng</button>
+                <button class="resume-btn">Về Tôi</button>
+            </div>
+            <div class="resume-box">
+                <div class="resume-detail education active">
+                    <h2 class="heading">Chứng <span>Chỉ</span></h2>
+                    <p class="desc">Những chứng chỉ và thành tựu trong quá trình học tập của tôi phản ánh sự nỗ lực không ngừng trên hành trình phát triển bản thân.</p>
+                    <div class="resume-list">
+                        <div class="resume-item">
+                            <p class="year" style="margin-bottom: 5px;">Networking Basics</p>
+                            <img src="./images/networking.png" alt="Networking Basics"/>
+                        </div>
+                        <div class="resume-item">
+                            <p class="year" style="margin-bottom: 5px;">JavaScript Essentials 1</p>
+                            <img src="./images/javascript1.png" alt="JavaScript Essentials 1"/>
+                        </div>
+                        <div class="resume-item">
+                            <p class="year" style="margin-bottom: 5px;">JavaScript Essentials 2</p>
+                            <img src="./images/javascript2.png" alt="JavaScript Essentials 2"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="resume-detail skills">                    
+                    <h2 class="heading">Kỹ <span>Năng</span></h2>
+                    <p class="desc">Tôi thành thạo Java, JavaScript và các công nghệ web khác, luôn sẵn sàng học hỏi và áp dụng kỹ năng vào các dự án thực tế.</p>
+                    <div class="resume-list">
+                        <div class="resume-item">
+                            <i class='bx bxl-html5'></i>
+                            <span>HTML5</span>
+                        </div>
+                        <div class="resume-item">
+                            <i class='bx bxl-css3' ></i>
+                            <span>CSS3</span>
+                        </div>
+                        <div class="resume-item">
+                            <i class='bx bxl-javascript' ></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="resume-item">
+                            <i class='bx bxl-react'></i>
+                            <span>ReactJS</span>
+                        </div>
+                        <div class="resume-item">
+                            <i class='bx bxl-tailwind-css'></i>
+                            <span>Tailwind CSS</span>
+                        </div>
+                        <div class="resume-item">
+                            <i class='bx bxl-nodejs'></i>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="resume-item">
+                            <i class='bx bxl-c-plus-plus'></i>
+                            <span>C++</span>
+                        </div>
+                        <div class="resume-item">
+                            <i class='bx bxl-mongodb'></i>
+                            <span>MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="resume-detail about">
+                    <h2 class="heading">Về <span>Tôi</span></h2>
+                    <p class="desc">Tôi là một lập trình viên với đam mê học hỏi và phát triển các ứng dụng sáng tạo. Đây là thông tin cá nhân của tôi.</p>
+                    <div class="resume-list">
+                        <div class="resume-item">
+                            <p>Name <span>Hoàng Nguyễn Minh Phước</span></p>
+                        </div>
+                        <div class="resume-item">
+                            <p>Gender <span>Male</span></p>
+                        </div>
+                        <div class="resume-item">
+                            <p>Age <span>22 Years Old</span></p>
+                        </div>
+                        <div class="resume-item">
+                            <p>City <span>TP.Hồ Chí Minh</span></p>
+                        </div>
+                        <div class="resume-item">
+                            <p>Nationality <span>Vietnamese</span></p>
+                        </div>
+                        <div class="resume-item">
+                            <p>Job <span>Student</span></p>
+                        </div>
+                        <div class="resume-item">
+                            <p>Experience <span>2 Years</span></p>
+                        </div>
+                        <div class="resume-item">
+                            <p>Phone <span>(+84) 345 632 812</span></p>
+                        </div>
+                        <div class="resume-item">
+                            <p>Email <span>hoangnguyenph2003@gmail.com</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact" id="contact" style="padding-bottom: 7rem;">
+        <div class="contact-container">
+            <div class="contact-box">
+                <h2>Hãy Cùng Hợp Tác</h2>
+                <p class="desc">Chào bạn! Nếu bạn có bất kỳ câu hỏi nào hoặc muốn thảo luận về dự án, đừng ngần ngại liên hệ với tôi. Tôi rất mong được hợp tác và cùng bạn thực hiện những ý tưởng sáng tạo.</p>
+                <div class="contact-detail">
+                    <i class='bx bxs-phone' ></i>
+                    <div class="detail">
+                        <p>Phone</p>
+                        <p>(+84) 345 632 812</p>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <i class='bx bxs-envelope' ></i>
+                    <div class="detail">
+                        <p>Email</p>
+                        <p>hoangnguyenph2003@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <i class='bx bxs-map' ></i>
+                    <div class="detail">
+                        <p>Address</p>
+                        <p>106/3F 2, khu phố 1, Quận 9, Hồ Chí Minh</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-box">
+                <form action="">
+                    <h2 class="heading">Contact <span>Me</span></h2>
+                    <div class="field-box">
+                        <input type="text" placeholder="Full Name" required>
+                        <input type="text" placeholder="Email Address" required>
+                        <input type="text" placeholder="Phone Number" required>
+                        <input type="text" placeholder="Email Subject" required>
+                        <textarea name="" id="" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Nội dung Bài viết -->
+    <section class="post-detail">
+        <div class="post-contain">
+            <img src="./images/post1.jpeg" alt="">
+            <h2 class="heading">Java vs. Javascript: Đâu là ngôn ngữ dành cho bạn?</h2>
+            <p>Java và JavaScript là hai trong số những ngôn ngữ lập trình phổ biến nhất. Mặc dù cả hai đều có từ "Java" trong tên, chúng thực sự rất khác biệt.</p>
+            <p>Như Brendan, một lập trình viên full-stack, chia sẻ, sự khác biệt của chúng cũng giống như sự khác biệt giữa bánh donut và Doritos. Cả hai đều là món ăn vặt, và cả hai đều bắt đầu bằng chữ "do", nhưng sự tương đồng dừng lại ở đó. Brendan tiếp tục giải thích những khác biệt về nguồn gốc, đặc trưng, ứng dụng và và nghề nghiệp liên quan của Java và JavaScript.</p>
+            <p>Nếu bạn quan tâm tìm hiểu thêm về những khác biệt này - hoặc cố gắng xác định ngôn ngữ nào phù hợp nhất để học - hãy đọc thêm để tìm hiểu xem Java hay JavaScript sẽ phù hợp với bạn hơn nhé.</p>
+            <h2 class="heading">Java vs. JavaScript: Lịch sử và phát triển</h2>
+            <p>Hãy bắt đầu từ những ngày đầu. Sun Microsystems phát hành Java lần đầu tiên vào năm 1996. Ban đầu, họ định sử dụng Java để tích hợp vào các thiết bị TV nhằm tăng tính tương tác, nhưng kế hoạch này đã không thành công. Thay vào đó, Java đã tìm được vị thế của mình trong server-side programming - những hoạt động chạy ngầm của các ứng dụng.</p>
+            <p>Vào năm 1995, Netscape đã tạo ra một ngôn ngữ lập trình có tên là Mocha. Sau đó được đổi tên thành JavaScript, Mocha được thiết kế với sự đơn giản là chính. Giống như CSS, nó được nhúng vào HTML của trang web. Tuy nhiên, trong khi CSS thêm phong cách, thì JavaScript thêm tính tương tác.</p>
+            <p>Sau đó, để đáp ứng sự phổ biến ngày càng tăng của Internet Explorer (đối thủ chính của Netscape), Netscape và Sun Microsystems đã ký kết một thỏa thuận. Netscape cho phép Sun chạy ứng dụng Java trên trình duyệt web, điều này giúp họ tận dụng được độ phổ biến của ngôn ngữ này. Đổi lại, Netscape đã đổi tên Mocha thành JavaScript.</p>
+            <h2 class="heading">Java và JavaScript: Sự khác biệt và ứng dụng</h2>
+            <p>Bạn quan tâm học một ngôn ngữ lập trình mới và không chắc nên bắt đầu với Java hay JavaScript? Trong một cuộc thảo luận về chủ đề này, LeChuck chia sẻ:</p>
+            <p>"Điều này hoàn toàn phụ thuộc vào những gì bạn muốn làm.</p>
+            <p>Nói chung, nếu bạn muốn phát triển cho web thì hãy chọn JavaScript. Nếu bạn nghĩ rằng mình sẽ thích tạo ứng dụng Android, thì Java sẽ phù hợp hơn.</p>
+            <p>Bạn muốn sử dụng kiến thức lập trình của mình để làm gì? Trả lời câu hỏi này sẽ chỉ dẫn bạn đến các ngôn ngữ mà bạn muốn học..."</p>
+            <p>Cả Java và JavaScript đều được sử dụng rộng rãi trong ngành công nghệ. Bạn sẽ thấy Java được sử dụng bởi các công ty như Airbnb, Amazon và Meta; và JavaScript được sử dụng bởi LinkedIn, PayPal và Groupon. eBay, Google, Microsoft, Netflix và Uber sử dụng cả hai.</p>
+            <p>Trong phần này, chúng ta sẽ xem xét các ứng dụng của Java và JavaScript để giúp bạn xác định ngôn ngữ nào phù hợp với bạn nhất.</p>
+            <h2 class="heading">Java</h2>
+            <p>Java là một ngôn ngữ lập trình có kiểu dữ liệu tĩnh, với cú pháp cứng nhắc khi khai báo biến. Với Java, bạn phải chỉ định rõ ràng kiểu dữ liệu mà bạn sẽ lưu trữ trong một biến cụ thể. Một khi bạn đã khai báo một biến với một kiểu dữ liệu nhất định (như String), nó phải giữ nguyên kiểu dữ liệu đó trong suốt vòng đời của nó.</p>
+            <p>ava cũng là một ngôn ngữ lập trình hướng đối tượng. Các lớp (class) đóng vai trò là những mẫu thiết kế tái sử dụng để tạo ra các đối tượng (object). Các đối tượng là những cấu trúc dữ liệu được sử dụng để lưu trữ thông tin. Khi lập trình bằng Java, bạn sẽ sử dụng các lớp và đối tượng để mô hình hóa các tình huống trong thực tế vào trong mã code. Dưới đây là một ví dụ:</p>
+            <pre>public class CheeseCurls {
+
+                public static void main(String[] args) {
+            
+                System.out.println("Here's a bag of Cheese curls");
+            
+                }
+            
+            }</pre>
+            <p>Như bạn thấy, Java đòi hỏi phải viết khá nhiều mã code, ngay cả cho một việc đơn giản như in ra dòng "Here's a bag of Cheese curls". Trước tiên, chúng ta khai báo lớp, được thể hiện qua dòng đầu tiên trong ví dụ trên. Bên trong lớp này, chúng ta tạo ra phương thức main, đây là một phương thức sẽ được call tự động khi chương trình chạy. Cuối cùng, chúng ta chỉ định những gì chúng ta muốn thực hiện.</p>
+            <h2 class="heading">Ưu điểm và ứng dụng của Java</h2>
+            <p>Nhờ khả năng tạo ra sự ổn định và quản lý dữ liệu, Java được sử dụng trong:</p>
+            <ul>
+                <li>Các dự án quy mô lớn của các doanh nghiệp lớn trong các ngành tài chính, thương mại và ô tô</li>
+                <li>Phát triển ứng dụng Android</li>
+                <li>Phát triển back-end</li>
+                <li>Tính toán khoa học</li>
+                <li>Phần cứng và Internet of Things (ví dụ như Raspberry Pi, loa Sonos, tủ lạnh thông minh)</li>
+            </ul>
+            <p>Java mất thời gian để học, nhưng nhu cầu, tính đa dạng và tiềm năng thu nhập của nó thể hiện rõ giá trị của nó. Bạn cũng sẽ thấy sự thỏa mãn khi xây dựng một dự án lớn từ đầu - đặc biệt là khi đó là mã code của chính bạn và nó chạy một cách suôn sẻ.</p>
+            <p>Nếu bạn quan tâm đến khoa học máy tính hoặc thấy bản thân sẽ xây dựng những ứng dụng Android hot tiếp theo, học Java là một bước khởi đầu tuyệt vời.</p>
+            <h2 class="heading">JavaScript</h2>
+            <p>Nếu bạn quan tâm đến việc xây dựng các trang web tương tác hoặc phát triển trò chơi, thì JavaScript có thể là lựa chọn tốt hơn cho bạn.</p>
+            <p>JavaScript là một ngôn ngữ lập trình động, có cú pháp ít cứng nhắc hơn khi khai báo biến. Với JavaScript, bạn không cần phải chỉ định kiểu dữ liệu cho biến. Bạn cũng có thể gán lại các biến với các giá trị có kiểu dữ liệu khác nhau.</p>
+            <p>Khác với Java, JavaScript dựa trên prototype và không bị ràng buộc vào một mẫu mã cụ thể. Các bản cập nhật gần đây của JavaScript đã cho phép xây dựng các class, nhưng việc này không phải là yêu cầu bắt buộc. Ví dụ:</p>
+            <pre>console.log("Here's a bag of Cheese curls");</pre>
+            <p>Với JavaScript, bạn không cần phải thêm các class hoặc function - bạn chỉ cần viết những gì bạn muốn xảy ra trong một dòng.</p>
+            <a href="./index.html" class="btn">Quay lại trang chủ</a>
+        </div>
+    </section>
+
+    <section class="post-detail">
+        <div class="post-contain">
+            <img src="./images/post2.jpg" alt="">
+            <h2 class="heading" style="text-align: center;">Tạo Queue bằng JavaScript</h2>
+            <h2 class="heading">Giới thiệu</h2>
+            <p>Trong các cuộc trò chuyện về cấu trúc dữ liệu trong thế giới lập trình, thuật ngữ Queue được nhắc đến khá thường xuyên. Queue là một cấu trúc dữ liệu linear theo mô hình đầu vào đầu ra (FIFO),... tức là việc loại bỏ xảy ra ở phía trước và thêm vào xảy ra ở phía sau. Hãy tưởng tượng nó như điểm thanh toán tại cửa hàng tạp hóa. Khách hàng đến quầy thanh toán đầu tiên được phục vụ trước. Họ chỉ có thể tham gia hàng đợi từ phía sau hàng, và sau khi được phục vụ, họ rời đi từ phía trước hàng.</p>
+            <h2 class="heading">Cấu trúc dữ liệu Linear</h2>
+            <p>Cấu trúc dữ liệu linear là các loại cấu trúc dữ liệu trong đó các phần tử được lưu trữ theo thứ tự tuần tự. Các phần tử được tổ chức sao cho mỗi phần tử được liên kết trực tiếp với phần tử trước và phần tử sau của nó. Tuy nhiên, phần tử đầu tiên chỉ được liên kết với phần tử trước của nó và phần tử cuối cùng chỉ được liên kết với phần tử kế tiếp của nó.</p>
+            <p>Queue tuân thủ mô hình sắp xếp này, và chúng ta có thể thấy điều đó thông qua ví dụ về hàng đợi tại quầy thanh toán của cửa hàng tạp hóa của chúng ta. Mỗi khách hàng đến quầy thanh toán đại diện cho một phần tử. Khách hàng đầu tiên có một liên kết với khách hàng trước đó, khách hàng cuối cùng có một liên kết với khách hàng kế tiếp và mọi khách hàng khác ở giữa có một liên kết với khách hàng trước và khách hàng kế tiếp.</p>
+            <h2 class="heading">Các trường hợp sử dụng cho Queue</h2>
+            <p>Có một số trường hợp sử dụng cho hàng đợi trong lập trình và thực tế. Một số trong số chúng bao gồm những điều sau:</p>
+            <h2 class="heading">Máy in bàn</h2>
+            <p>Khi bạn gửi tài liệu đến máy in, chúng được in theo cùng thứ tự mà chúng được gửi và điều này rất hữu ích khi bạn cố gắng in các tài liệu theo một thứ tự cụ thể. Máy in đảm bảo các trang không bị lẫn lộn.</p>
+            <h2 class="heading">Cập nhật hàng đợi trình phát nhạc</h2>
+            <p>Đôi khi, trong khi chúng ta đang làm việc, chúng ta có những bài hát yêu thích để duy trì động lực. Chức năng hàng đợi của trình phát nhạc đảm bảo bạn nghe các bài hát được lựa chọn của mình theo cách mà nó được sắp xếp.</p>
+            <h2 class="heading">Hàng đợi dịch vụ khách hàng</h2>
+            <p>Nếu bạn đến ngân hàng để khiếu nại, họ họ sẽ để bạn xếp vào hàng đợi và người tiếp theo trong hàng sẽ không được gọi cho đến khi vấn đề của khách hàng hiện tại được giải quyết.</p>
+            <h2 class="heading">Chia sẻ tệp giữa hai quy trình</h2>
+            <p>Khi chuyển tệp từ một thiết bị sang thiết bị khác, các tệp được nhận ở đầu nhận theo cùng thứ tự mà chúng được gửi, bất kể thời gian mà một trong số chúng mất để hoàn thành.</p>
+            <h2 class="heading">Triển khai Queue</h2>
+            <p>Hàng đợi có thể được triển khai bằng bất kỳ ngôn ngữ lập trình nào, nhưng sự tập trung của chúng ta là vào cách tạo chúng bằng cách sử dụng JavaScript. Trong JavaScript, nó cũng có thể được triển khai theo hai cách: mảng- array và danh sách liên kết. Đối với bài viết này, chúng ta sẽ triển khai hàng đợi bằng cách sử dụng mảng-array .</p>
+            <p>Các thao tác trong Queue</p>
+            <p>Đây là một số thao tác cơ bản được thực hiện trên hàng đợi:</p>
+            <ul>
+                <li>Enqueue</li>
+                <li>Dequeue</li>
+                <li>Peek</li>
+                <li>Đảo ngược một queue</li>
+            </ul>
+            <p>Đối với việc triển khai các thao tác trên, chúng ta sẽ sử dụng một ES6 class và có các thao tác khác nhau như các phương pháp.</p>
+            <h2 class="heading">Enqueue</h2>
+            <p>Bước đầu tiên là khởi tạo lớp của chúng tôi với bộ nhớ riêng của nó (một mảng nơi các phần tử queue sẽ được lưu trữ):</p>
+            <pre> class Queue {
+                constructor() {
+                    this.queue = [];
+                }
+            }
+            </pre>
+            <p>Các dòng được thêm vào đoạn code của chúng ta đại diện cho một phương thức của lớp Queue. Nó xử lý một thao tác mà thêm một mục mới vào đối tượng mảng được khởi tạo bằng phương thức constructor.</p>
+            <p>Phương thức .enqueue() chấp nhận một đối số phần tử và sau đó thêm nó vào this.queue bằng phương thức mảng .push().</p>
+            <h2 class="heading">Dequeue</h2>
+            <p>Thuật ngữ này đề cập đến việc loại bỏ một phần tử mới từ hàng đợi. Một lần nữa, phương thức mảng .shift() giải quyết điều này cho chúng ta một cách dễ dàng.</p>
+            <pre>
+                class Queue {
+                    constructor() {
+                        this.queue = [];
+                    }
+                } 
+                enqueue(element) {
+                    this.queue.push(element);
+                }
+                dequeue() {
+                    return this.dequeue.shift();
+                }
+            </pre>
+            <p>Chúng ta đã thêm một phương thức mới .dequeue(). Phương thức này không chấp nhận bất kỳ đối số nào khác phương thức trước đó. Nó trả về một phần tử từ phía trước của hàng đợi và cũng loại bỏ nó bằng phương thức mảng .shift().</p>
+            <h2 class="heading">Kết luận</h2>
+            <p>Đây là tóm tắt về những gì đã được bàn trong bài viết này:</p>
+            <p>Chúng tôi giải thích khái niệm về queue (FIFO) và cách chúng được áp dụng trong thế giới thực.
+                Chúng tôi đã tạo ra một class và thực hiện các thao tác hàng đợi khác nhau (enqueue, dequeue, peek, reverse).</p>
+                <p>Đó là tất cả. Chúng tôi đã triển khai thành công một queue và các thao tác cơ bản của nó bằng JavaScript.</p>
+                <a href="/index.html" class="btn">Quay lại trang chủ</a>
+        </div>
+    </section>
+
+    <section class="post-detail">
+        <div class="post-contain">
+            <img src="./images/post3.jpg" alt="">
+            <h2 class="heading" style="text-align: center;">6 Tips Để Code Javascript Luôn Sạch Và Dễ Đọc</h2>
+            <h2 class="heading">1. Dấu ngoặc nhọn</h2>
+            <p>Hầu hết trong các dự án Javascript, dấu ngoặc nhọn được viết theo kiểu "Egyptian" (ai cập) - với dấu mở ngoặc nằm cùng một hàng với từ khóa tương ứng - không phải là một hàng khác. Thêm nữa là có một khoảng trắng trước dấu mở ngoặc: </p>
+            <pre>if (condition) {
+                // do something
+              }</pre>
+              <p>Ngoài ra còn có một số cách viết khác.</p>
+              <p>Những bạn mới học thường viết như thế này. Dấu ngoặc nhọn lúc này không cần thiết</p>
+              <pre>if (n < 0) {alert('This number is negative');}</pre>
+              <p>Không sử dụng dấu ngoặc nhọn và viết ở dòng mới. Làm như thế này sẽ dễ gây ra lỗi khi ta thêm những đoạn code mới.</p>
+              <pre>if (n < 0){
+                alert('This number is negative')​;}</pre>
+                <p>Viết tất cả trên một dòng và không sử dụng dấu ngoặc nhọn - Được nếu đoạn code ngắn</p>
+                <pre>if (n < 0) alert('This number is negative');</pre>
+                <p>Đây là cách mình khuyên mọi người nên dùng</p>
+                <pre>if (n < 0) {
+                    alert('This number is negative');
+                  }</pre>
+                  <h2 class="heading">2. Độ dài của một dòng.</h2>
+                  <p>Mình chắc rằng sẽ không một ai thích đọc một dòng code dài ngoằn ngoèo. Đôi lúc mọi người khi code cũng sẽ gặp vấn đề đó. Và cách giải quyết vấn đề này là chia nó ra sang những dòng khác.</p>
+                  <pre>// Sử dụng dấu `` để chia một string ra thành nhiều dòng.
+
+                    let str = `
+                      The quick brown fox jumps
+                      over the lazy dog
+                    `;</pre>
+                    <h2 class="heading">3. Thụt lề.</h2>
+                    <p>Có 2 loại thụt lề:</p>
+                    <p>Thụt ngang: 2 hoặc 4 phím space.</p>
+                    <p>Thụt lề ngang được thực hiện bằng cách sử dụng 2 hoặc 4 phím space hoặc dùng phím Tab. Cách nào cũng được nhưng sử dụng phím Space ngày nay phổ biến hơn.</p>
+                    <p>Ưu điểm của phím space là linh hoạt thụt lề hơn phím Tab.</p>
+                    <p>Thụt dọc: những dòng trống để chia đoạn code ra thành từng khối một cách logic.</p>
+                    <p>Trong một function cũng có thể được chia ra thành các phần thực hiện công việc riêng biệt. Trong ví dụ dưới đây, việc khởi tạo biến, dùng vòng lặp được chia theo chiều dọc.</p>
+                    <pre>function pow(x, n) {
+                        let result = 1;
+                        //              <--
+                        for (let i = 0; i < n; i++) {
+                          result *= x;
+                        }
+                        //              <--
+                        return result;
+                      }</pre>
+                      <h2 class="heading">4. Dấu chấm phẩy.</h2>
+                      <p>Dấu chấm phẩy nên được đặt sau mỗi lệnh, thậm chí việc bỏ qua nó vẫn không ảnh hưởng đến chương trình.</p>
+                      <p>Có những ngôn ngữ lập trình khi mà dấu chấm phẩy là tùy chọn và hiếm khi được sử dụng. Trong Javascript, mặc dù có những trường hợp ngắt một dòng không được hiểu là dấu chấm phẩy ( ví dụ khi xử lý một Promise), khiến đoạn code dễ gây ra lỗi. </p>
+                      <h2 class="heading">5. Nesting Levels.</h2>
+                      <p>Cố gắng tránh để những đoạn code lồng nhau quá nhiều tầng.</p>
+                      <p>Ví dụ, khi sử dụng vòng lặp, sử dụng continue; là một cách để tránh việc thêm một nesting level.</p>
+                      <p>Thay vì viết như thế này:</p>
+                      <pre>for (let i = 0; i < 10; i++) {
+                        if (cond) {
+                          ... // <- thêm một nesting level
+                        }
+                      }</pre>
+                      <p>Ta có thể viết:</p>
+                      <pre>for (let i = 0; i < 10; i++) {
+                        if (!cond) continue;
+                        ...  // <- tránh việc thêm nesting level
+                      }</pre>
+                      <p>Chúng ta có thể làm điều tương tự với if else và return</p>
+                      <p>Thay vì:</p>
+                      <pre>function pow(x, n) {
+                        if (n < 0) {
+                          alert("Negative 'n' not supported");
+                        } else {
+                          let result = 1;
+                      
+                          for (let i = 0; i < n; i++) {
+                            result *= x;
+                          }
+                      
+                          return result;
+                        }
+                      }</pre>
+                      <p>Mình chắc rằng khá nhiều bạn thường viết theo cách 1.</p>
+                      <p>Cách 2 dễ đọc hơn vì trường hợp đặc biệt n < 0 đã được xử lý sớm. Khi mà kiểm tra xong chúng ta sẽ vào thẳng đoạn code chính mà không cần thêm một nested level.</p>
+                      <h2 class="heading">6. Đặt function</h2>
+                      <p>Nếu bạn viết một vài "helper" function và sử dụng chúng, có 3 cách để tổ chức những function này.</p>
+                      <p>Khai báo functions rồi sau đó sử dụng nó.</p>
+                      <pre>// khai báo function
+                        function createElement() {
+                          ...
+                        }
+                        
+                        function setHandler(elem) {
+                          ...
+                        }
+                        
+                        function walkAround() {
+                          ...
+                        }
+                        
+                        // code sử dụng những function này
+                        let elem = createElement();
+                        setHandler(elem);
+                        walkAround();</pre>
+                        <p>Code trước sau đó đến functions</p>
+                        <pre>// code sử dụng functions
+                            let elem = createElement();
+                            setHandler(elem);
+                            walkAround();
+                            
+                            // --- helper functions ---
+                            function createElement() {
+                              ...
+                            }
+                            
+                            function setHandler(elem) {
+                              ...
+                            }
+                            
+                            function walkAround() {
+                              ...
+                            }</pre>
+                            <p>Kết hợp: function được khai báo tại nơi nó được sử dụng đầu tiên</p>
+                            <p>Hầu hết cách số 2 thường được sử dụng hơn bời vì điều trước tiên chúng ta muốn biết là đoạn code làm gì (nhìn tên function là biết ngay).</p>
+                            <p>Ngoài ra còn có một số coding style phổ biến khác như Google Javascript Style, Airbnb Javascript Style, StandardJs. Bên cạnh đó cũng có tool tự động format code của bạn theo một chuẩn có sẵn như JSLint, JSHint, ESLint.</p>
+                            <h2 class="heading">Tạm kết</h2>
+                            <p>Trên đây là một số coding styles trong javascript mình thường sử dụng. Điều này giúp mình mỗi khi đọc lại code mình mất ít thời gian hơn để hiểu đoạn code đó, mục đích của nó là gì. Hy vọng sẽ giúp các bạn mới học lập trình Javascript. Nếu có ý kiến hoặc đóng góp các bạn comment xây dựng bên dưới nhé. Chúc các bạn học tốt.</p>
+                      <a href="/index.html" class="btn">Quay lại trang chủ</a>
+        </div>
+    </section>
+
+    <section class="post-detail">
+        <div class="post-contain">
+            <img src="./images/post4.jpg" alt="">
+            <h2 class="heading" style="text-align: center;">Không Nên Học Javascript, Liệu Có Đúng Như Vậy?</h2>
+            <p>Hôm nay là ngày cuối tuần, cũng rảnh một chút nên tôi cần nghĩ lại vài thứ mà người ta bảo mình, ít nhất để xem xét trong những ngày vừa qua có chuyện gì mình bỏ sót mất không hoặc chí ra là xem thử có ai khuyên gì mà mình chưa tiếp thu kịp. Duy có một điều loay hoay trong đầu mà tôi vẫn đang còn cảm thấy bứt rứt, đó là có người bảo tôi không nên học JavaScript.</p>
+            <h2 class="heading">Người ta nghĩ gì về Javascript?</h2>
+            <p>Khi nghe người ta nói vậy, tôi giật mình nhưng cũng chỉ cười, phút chốc chợt nghĩ không biết mình theo JavaScript có thực sự là một sai lầm ngay từ lúc khởi nguyên hay không nữa.</p>
+            <p>Sở dĩ, tôi giật mình không phải vì người ta đang động chạm đến lòng tự tôn của bản thân, cũng không phải gạt đi cái sở thích quái dị cùng JS của tôi, mà kì thực là đang bảo rằng tôi không nên cầm vào cái cần câu cơm của mình nữa. Đương nhiên, nó là một vấn đề lớn.</p>
+            <p>Xét ra người đưa lời khuyên cho tôi cũng chỉ trạc tuổi tôi, thế nên tôi cũng không đặt nặng lắm, nhưng tôi lại chợt nghĩ không lẽ JavaScript lại bị khinh rẻ thế cơ à? Hay JS vẫn như 10 năm trước, chỉ được xem là dành cho trẻ trâu và muốn ngon thì phải đi học Java hoặc C cho nó phải phép.</p>
+            <h2 class="heading">Liệu JS Có Nên Học?</h2>
+            <p>Tôi không có ý cho rằng người đó thiếu hiểu biết hoặc chưa trải. Xét cho cùng, tôi cũng là một người học lấy kỹ năng chứ cũng không hẳn là loại có kiến thức, nhất là những hiểu biết chuyên sâu về ngôn ngữ thì càng không... Tuy vậy, ít ra tôi cũng là người đang sống bằng JS, ăn, ngủ và làm việc cùng JS; và JS cũng đang nuôi tôi lớn và dạy tôi khôn, cho tôi nguồn thu nhập.</p>
+            <p>Kì thực, tôi cũng có phản bác, nhưng lời phản bác của tôi yếu ớt và không mang tính thuyết phục: "Lỗi không phải tại ngôn ngữ". Nếu bạn đủ hiểu về lập trình, bạn sẽ hiểu ý tôi rằng đừng đổ thừa tại ngôn ngữ.</p>
+            <p>Khi bạn đã Master một ngôn ngữ lập trình nào đó, thì mặc nhiên bạn sẽ thấy nó thật tuyệt vời và mạnh mẽ. Tôi cũng đồng ý với người kia - một người có sở thích nghiên cứu Java, một ngôn ngữ có tuổi đời ngang ngửa bố tôi có thừa, rằng JS có nhiều thứ dở. Tuy vậy, tại sao trong công ty lại toàn tuyển người trẻ mà không tuyển bố tôi về - một người trải đời dài như đường Phạm Văn Đồng kéo dài tít qua Nguyễn Trãi.</p>
+            <p>JS có thể cùi, nhưng một ngôn ngữ chỉ kì thực là vô dụng khi bạn không áp dụng nó được vào thực tế. Giống như kiểu bạn có tài mà không có tâm thì làm gì nó cũng chỉ dùng để so đo là chính.
+                Nếu lời phản bác kia là không đủ, và tôi có một cơ hội rõ ràng hơn để mà giải thích, có mấy lí do mà tôi muốn các bạn hiểu rằng JS như một chàng trai trẻ đang tới tuổi dậy thì và được cho ăn uống đầy đủ:</p>
+                <ul>
+                    <li>JavaScript là ngôn ngữ được sử dụng phổ biến nhất trong 8 năm liên tiếp.</li>
+                    <li>Được sử dụng trên 94.5% các Websites cho dù được thiết kế phục vụ để giải quyết các vấn đề client-side.</li>
+                    <li>JavaScript rất linh hoạt (cũng vì vậy mà họ chê JS chậm), nên nếu bạn Master được JS thì khả năng phát triển của nó là vô hạn.</li>
+                    <li>Với JS, bạn code Server-side cũng được mà Client-side cũng ngon. Code Hybrid App, Cross Platform App, Game, ... Mình nghĩ không gì là không làm được cả.</li>
+                    <li>Thích hợp cho người mới bước chân vào lập trình.</li>
+                </ul>
+            <h2 class="heading">Lời khuyên cho người mới bắt đầu</h2>
+            <p>Hiện nay cũng có rất nhiều khóa học online về Javascript. Mình có gợi ý 2 khóa học tương đối ổn dành cho ngươi mới bắt đầu. Các bạn có thể học trên codelearn tại:</p>
+            <p>Javascript cơ bản ... Ở đây các bạn sẽ biết cách sử dụng các hàm, function, và luyện thuật toán cơ bản đến nâng cao. Còn nếu bạn nào muốn vọc vạch thêm về web , frontend , backend thì các bạn có thể tham khảo khóa học F8 của anh Sơn Đặng tại link này: <a href="https://fullstack.edu.vn/categories/javascript">https://fullstack.edu.vn/categories/javascript ...</a>
+
+                Như vậy tôi đã giới thiệu một số khóa học online, nếu ai có thời gian và chịu đầu tư thì nên đi học khóa offline thì bạn sẽ được tương tác và giải thích chi tiết cụ thể hơn và giúp bạn đạt được hiệu quả tối đa.
+                
+                À còn một điều quan trọng nữa, đó là các bạn muốn lập trình giỏi thì kỹ năng ngoại ngữ ( đặc biệt là tiếng Anh ) phải khá tốt vì đa số ngôn ngữ lập trình là tiếng anh và tài liệu lập trình cũng là tiếng anh nốt. Tài liệu bằng tiếng Việt cũng có nhưng chúng khá là ít ỏi nếu bạn đợi bản dịch tiếng Việt thì thế giới đã sang một công nghệ mới rồi.</p>
+                <h2 class="heading">Tạm Kết</h2>
+                <p>Tuy là một ngôn ngữ weakly-typed (Nhưng có thể được khắc phục bằng TypeScript), JS vẫn là một lựa chọn mình đánh giá xứng đáng cho các bạn để bắt đầu "nghiệp lập trình" của bản thân.</p>
+                <p>Hy vọng rồi mình sẽ có cơ hội chia sẻ thêm cho các bạn về phương pháp học JS, còn bài viết này mình chỉ muốn nói rằng "ngôn ngữ không có tội", quan trọng là bản thân đã lựa chọn thì hãy tìm hiểu theo đuổi đến cùng.</p>
+                <p>Còn bạn nghĩ thế nào, liệu JS có phải là một ngôn ngữ đáng học, liệu nó có thực sự "sơ đẳng" đến vậy? Thì hãy để lại những ý kiến của các bạn ở phần bình luận nhé. </p>
+                <a href="./index.html" class="btn">Quay lại trang chủ</a>
+        </div>
+    </section>
+
+    <section class="post-detail">
+        <div class="post-contain">
+            <img src="./images/post5.jpg" alt="">
+            <h2 class="heading" style="text-align: center;">Exception Trong Javascript Được Xử Lý Như Thế Nào?</h2>
+            <h2 class="heading">Khối lệnh Try-Catch-Finally </h2>
+            <p>Giống với nhiều ngôn ngữ lập trình, phương pháp chính để xử lý các ngoại lệ trong JavaScript là try-catch. try-catch là một khối mã có thể được sử dụng để xử lý các ngoại lệ được ném ra mà không làm gián đoạn việc thực thi chương trình. Nói cách khác, bạn có thể "try" thực thi một khối mã và "catch" bất kỳ ngoại lệ nào được ném ra.</p>
+            <h2 class="heading">Catching all exceptions</h2>
+            <p>Nói một cách đơn giản nhất, việc bắt các ngoại lệ trong JavaScript yêu cầu chỉ cần gói một biểu thức trong một câu lệnh try-catch. Nếu không có bất kỳ cấu hình bổ sung nào, phương thức này sẽ bắt bất kỳ và tất cả các trường hợp ngoại lệ được ném ra.</p>
+            <pre>try {
+                // ...
+              } catch (e) {
+                // ...
+              }</pre>
+              <p>Mặc dù điều này tương đối đơn giản về mặt xử lý lỗi, nhưng điều quan trọng cần lưu ý là ngoại lệ bị bắt luôn là việc triển JavaScript Error object, đối tượng này mang theo một số thuộc tính hữu ích như mô tả lỗi mà con người có thể đọc được. Điều này cho phép bạn ghi lại các ngoại lệ này để gỡ lỗi.</p>
+              <pre>try {
+                // ...
+              } catch (e) {
+                console.log(e);
+              }</pre>
+              <h2 class="heading">Catching specific exceptions</h2>
+              <p>Tuy nhiên, trong hầu hết các trường hợp, bắt mọi trường hợp ngoại lệ được ném ra được coi là hành vi xấu. Việc nắm bắt và phản ứng cụ thể với các trường hợp ngoại lệ mà bạn mong đợi gặp phải sẽ dễ quản lý hơn nhiều. Để thực hiện điều này, chỉ cần kiểm tra kiểu trường hợp ngoại lệ trước khi phản ứng với nó.</p>
+                <a href="./index.html" class="btn">Quay lại trang chủ</a>
+        </div>
+    </section>
+
+    <section class="post-detail">
+        <div class="post-contain">
+            <img src="./images/post6.jpg" alt="">
+            <h2 class="heading" style="text-align: center;">Tạo Queue bằng JavaScript</h2>
+            <h2 class="heading">Giới thiệu</h2>
+            <p>Trong các cuộc trò chuyện về cấu trúc dữ liệu trong thế giới lập trình, thuật ngữ Queue được nhắc đến khá thường xuyên. Queue là một cấu trúc dữ liệu linear theo mô hình đầu vào đầu ra (FIFO),... tức là việc loại bỏ xảy ra ở phía trước và thêm vào xảy ra ở phía sau. Hãy tưởng tượng nó như điểm thanh toán tại cửa hàng tạp hóa. Khách hàng đến quầy thanh toán đầu tiên được phục vụ trước. Họ chỉ có thể tham gia hàng đợi từ phía sau hàng, và sau khi được phục vụ, họ rời đi từ phía trước hàng.</p>
+            <h2 class="heading">Cấu trúc dữ liệu Linear</h2>
+            <p>Cấu trúc dữ liệu linear là các loại cấu trúc dữ liệu trong đó các phần tử được lưu trữ theo thứ tự tuần tự. Các phần tử được tổ chức sao cho mỗi phần tử được liên kết trực tiếp với phần tử trước và phần tử sau của nó. Tuy nhiên, phần tử đầu tiên chỉ được liên kết với phần tử trước của nó và phần tử cuối cùng chỉ được liên kết với phần tử kế tiếp của nó.</p>
+            <p>Queue tuân thủ mô hình sắp xếp này, và chúng ta có thể thấy điều đó thông qua ví dụ về hàng đợi tại quầy thanh toán của cửa hàng tạp hóa của chúng ta. Mỗi khách hàng đến quầy thanh toán đại diện cho một phần tử. Khách hàng đầu tiên có một liên kết với khách hàng trước đó, khách hàng cuối cùng có một liên kết với khách hàng kế tiếp và mọi khách hàng khác ở giữa có một liên kết với khách hàng trước và khách hàng kế tiếp.</p>
+            <h2 class="heading">Các trường hợp sử dụng cho Queue</h2>
+            <p>Có một số trường hợp sử dụng cho hàng đợi trong lập trình và thực tế. Một số trong số chúng bao gồm những điều sau:</p>
+            <h2 class="heading">Máy in bàn</h2>
+            <p>Khi bạn gửi tài liệu đến máy in, chúng được in theo cùng thứ tự mà chúng được gửi và điều này rất hữu ích khi bạn cố gắng in các tài liệu theo một thứ tự cụ thể. Máy in đảm bảo các trang không bị lẫn lộn.</p>
+            <h2 class="heading">Cập nhật hàng đợi trình phát nhạc</h2>
+            <p>Đôi khi, trong khi chúng ta đang làm việc, chúng ta có những bài hát yêu thích để duy trì động lực. Chức năng hàng đợi của trình phát nhạc đảm bảo bạn nghe các bài hát được lựa chọn của mình theo cách mà nó được sắp xếp.</p>
+            <h2 class="heading">Hàng đợi dịch vụ khách hàng</h2>
+            <p>Nếu bạn đến ngân hàng để khiếu nại, họ họ sẽ để bạn xếp vào hàng đợi và người tiếp theo trong hàng sẽ không được gọi cho đến khi vấn đề của khách hàng hiện tại được giải quyết.</p>
+            <h2 class="heading">Chia sẻ tệp giữa hai quy trình</h2>
+            <p>Khi chuyển tệp từ một thiết bị sang thiết bị khác, các tệp được nhận ở đầu nhận theo cùng thứ tự mà chúng được gửi, bất kể thời gian mà một trong số chúng mất để hoàn thành.</p>
+            <h2 class="heading">Triển khai Queue</h2>
+            <p>Hàng đợi có thể được triển khai bằng bất kỳ ngôn ngữ lập trình nào, nhưng sự tập trung của chúng ta là vào cách tạo chúng bằng cách sử dụng JavaScript. Trong JavaScript, nó cũng có thể được triển khai theo hai cách: mảng- array và danh sách liên kết. Đối với bài viết này, chúng ta sẽ triển khai hàng đợi bằng cách sử dụng mảng-array .</p>
+            <p>Các thao tác trong Queue</p>
+            <p>Đây là một số thao tác cơ bản được thực hiện trên hàng đợi:</p>
+            <ul>
+                <li>Enqueue</li>
+                <li>Dequeue</li>
+                <li>Peek</li>
+                <li>Đảo ngược một queue</li>
+            </ul>
+            <p>Đối với việc triển khai các thao tác trên, chúng ta sẽ sử dụng một ES6 class và có các thao tác khác nhau như các phương pháp.</p>
+            <h2 class="heading">Enqueue</h2>
+            <p>Bước đầu tiên là khởi tạo lớp của chúng tôi với bộ nhớ riêng của nó (một mảng nơi các phần tử queue sẽ được lưu trữ):</p>
+            <pre> class Queue {
+                constructor() {
+                    this.queue = [];
+                }
+            }
+            </pre>
+            <p>Các dòng được thêm vào đoạn code của chúng ta đại diện cho một phương thức của lớp Queue. Nó xử lý một thao tác mà thêm một mục mới vào đối tượng mảng được khởi tạo bằng phương thức constructor.</p>
+            <p>Phương thức .enqueue() chấp nhận một đối số phần tử và sau đó thêm nó vào this.queue bằng phương thức mảng .push().</p>
+            <h2 class="heading">Dequeue</h2>
+            <p>Thuật ngữ này đề cập đến việc loại bỏ một phần tử mới từ hàng đợi. Một lần nữa, phương thức mảng .shift() giải quyết điều này cho chúng ta một cách dễ dàng.</p>
+            <pre>
+                class Queue {
+                    constructor() {
+                        this.queue = [];
+                    }
+                } 
+                enqueue(element) {
+                    this.queue.push(element);
+                }
+                dequeue() {
+                    return this.dequeue.shift();
+                }
+            </pre>
+            <p>Chúng ta đã thêm một phương thức mới .dequeue(). Phương thức này không chấp nhận bất kỳ đối số nào khác phương thức trước đó. Nó trả về một phần tử từ phía trước của hàng đợi và cũng loại bỏ nó bằng phương thức mảng .shift().</p>
+            <h2 class="heading">Kết luận</h2>
+            <p>Đây là tóm tắt về những gì đã được bàn trong bài viết này:</p>
+            <p>Chúng tôi giải thích khái niệm về queue (FIFO) và cách chúng được áp dụng trong thế giới thực.
+                Chúng tôi đã tạo ra một class và thực hiện các thao tác hàng đợi khác nhau (enqueue, dequeue, peek, reverse).</p>
+                <p>Đó là tất cả. Chúng tôi đã triển khai thành công một queue và các thao tác cơ bản của nó bằng JavaScript.</p>
+                <a href="./index.html" class="btn">Quay lại trang chủ</a>
+        </div>
+    </section>
+
+    <section class="post-detail">
+        <div class="post-contain">
+            <img src="./images/post7.jpg" alt="">
+            <h2 class="heading" style="text-align: center;">Tạo Queue bằng JavaScript</h2>
+            <h2 class="heading">Giới thiệu</h2>
+            <p>Trong các cuộc trò chuyện về cấu trúc dữ liệu trong thế giới lập trình, thuật ngữ Queue được nhắc đến khá thường xuyên. Queue là một cấu trúc dữ liệu linear theo mô hình đầu vào đầu ra (FIFO),... tức là việc loại bỏ xảy ra ở phía trước và thêm vào xảy ra ở phía sau. Hãy tưởng tượng nó như điểm thanh toán tại cửa hàng tạp hóa. Khách hàng đến quầy thanh toán đầu tiên được phục vụ trước. Họ chỉ có thể tham gia hàng đợi từ phía sau hàng, và sau khi được phục vụ, họ rời đi từ phía trước hàng.</p>
+            <h2 class="heading">Cấu trúc dữ liệu Linear</h2>
+            <p>Cấu trúc dữ liệu linear là các loại cấu trúc dữ liệu trong đó các phần tử được lưu trữ theo thứ tự tuần tự. Các phần tử được tổ chức sao cho mỗi phần tử được liên kết trực tiếp với phần tử trước và phần tử sau của nó. Tuy nhiên, phần tử đầu tiên chỉ được liên kết với phần tử trước của nó và phần tử cuối cùng chỉ được liên kết với phần tử kế tiếp của nó.</p>
+            <p>Queue tuân thủ mô hình sắp xếp này, và chúng ta có thể thấy điều đó thông qua ví dụ về hàng đợi tại quầy thanh toán của cửa hàng tạp hóa của chúng ta. Mỗi khách hàng đến quầy thanh toán đại diện cho một phần tử. Khách hàng đầu tiên có một liên kết với khách hàng trước đó, khách hàng cuối cùng có một liên kết với khách hàng kế tiếp và mọi khách hàng khác ở giữa có một liên kết với khách hàng trước và khách hàng kế tiếp.</p>
+            <h2 class="heading">Các trường hợp sử dụng cho Queue</h2>
+            <p>Có một số trường hợp sử dụng cho hàng đợi trong lập trình và thực tế. Một số trong số chúng bao gồm những điều sau:</p>
+            <h2 class="heading">Máy in bàn</h2>
+            <p>Khi bạn gửi tài liệu đến máy in, chúng được in theo cùng thứ tự mà chúng được gửi và điều này rất hữu ích khi bạn cố gắng in các tài liệu theo một thứ tự cụ thể. Máy in đảm bảo các trang không bị lẫn lộn.</p>
+            <h2 class="heading">Cập nhật hàng đợi trình phát nhạc</h2>
+            <p>Đôi khi, trong khi chúng ta đang làm việc, chúng ta có những bài hát yêu thích để duy trì động lực. Chức năng hàng đợi của trình phát nhạc đảm bảo bạn nghe các bài hát được lựa chọn của mình theo cách mà nó được sắp xếp.</p>
+            <h2 class="heading">Hàng đợi dịch vụ khách hàng</h2>
+            <p>Nếu bạn đến ngân hàng để khiếu nại, họ họ sẽ để bạn xếp vào hàng đợi và người tiếp theo trong hàng sẽ không được gọi cho đến khi vấn đề của khách hàng hiện tại được giải quyết.</p>
+            <h2 class="heading">Chia sẻ tệp giữa hai quy trình</h2>
+            <p>Khi chuyển tệp từ một thiết bị sang thiết bị khác, các tệp được nhận ở đầu nhận theo cùng thứ tự mà chúng được gửi, bất kể thời gian mà một trong số chúng mất để hoàn thành.</p>
+            <h2 class="heading">Triển khai Queue</h2>
+            <p>Hàng đợi có thể được triển khai bằng bất kỳ ngôn ngữ lập trình nào, nhưng sự tập trung của chúng ta là vào cách tạo chúng bằng cách sử dụng JavaScript. Trong JavaScript, nó cũng có thể được triển khai theo hai cách: mảng- array và danh sách liên kết. Đối với bài viết này, chúng ta sẽ triển khai hàng đợi bằng cách sử dụng mảng-array .</p>
+            <p>Các thao tác trong Queue</p>
+            <p>Đây là một số thao tác cơ bản được thực hiện trên hàng đợi:</p>
+            <ul>
+                <li>Enqueue</li>
+                <li>Dequeue</li>
+                <li>Peek</li>
+                <li>Đảo ngược một queue</li>
+            </ul>
+            <p>Đối với việc triển khai các thao tác trên, chúng ta sẽ sử dụng một ES6 class và có các thao tác khác nhau như các phương pháp.</p>
+            <h2 class="heading">Enqueue</h2>
+            <p>Bước đầu tiên là khởi tạo lớp của chúng tôi với bộ nhớ riêng của nó (một mảng nơi các phần tử queue sẽ được lưu trữ):</p>
+            <pre> class Queue {
+                constructor() {
+                    this.queue = [];
+                }
+            }
+            </pre>
+            <p>Các dòng được thêm vào đoạn code của chúng ta đại diện cho một phương thức của lớp Queue. Nó xử lý một thao tác mà thêm một mục mới vào đối tượng mảng được khởi tạo bằng phương thức constructor.</p>
+            <p>Phương thức .enqueue() chấp nhận một đối số phần tử và sau đó thêm nó vào this.queue bằng phương thức mảng .push().</p>
+            <h2 class="heading">Dequeue</h2>
+            <p>Thuật ngữ này đề cập đến việc loại bỏ một phần tử mới từ hàng đợi. Một lần nữa, phương thức mảng .shift() giải quyết điều này cho chúng ta một cách dễ dàng.</p>
+            <pre>
+                class Queue {
+                    constructor() {
+                        this.queue = [];
+                    }
+                } 
+                enqueue(element) {
+                    this.queue.push(element);
+                }
+                dequeue() {
+                    return this.dequeue.shift();
+                }
+            </pre>
+            <p>Chúng ta đã thêm một phương thức mới .dequeue(). Phương thức này không chấp nhận bất kỳ đối số nào khác phương thức trước đó. Nó trả về một phần tử từ phía trước của hàng đợi và cũng loại bỏ nó bằng phương thức mảng .shift().</p>
+            <h2 class="heading">Kết luận</h2>
+            <p>Đây là tóm tắt về những gì đã được bàn trong bài viết này:</p>
+            <p>Chúng tôi giải thích khái niệm về queue (FIFO) và cách chúng được áp dụng trong thế giới thực.
+                Chúng tôi đã tạo ra một class và thực hiện các thao tác hàng đợi khác nhau (enqueue, dequeue, peek, reverse).</p>
+                <p>Đó là tất cả. Chúng tôi đã triển khai thành công một queue và các thao tác cơ bản của nó bằng JavaScript.</p>
+                <a href="./index.html" class="btn">Quay lại trang chủ</a>
+        </div>
+    </section>
+
+    <section class="post-detail">
+        <div class="post-contain">
+            <img src="./images/post8.jpg" alt="">
+            <h2 class="heading" style="text-align: center;">Tạo Queue bằng JavaScript</h2>
+            <h2 class="heading">Giới thiệu</h2>
+            <p>Trong các cuộc trò chuyện về cấu trúc dữ liệu trong thế giới lập trình, thuật ngữ Queue được nhắc đến khá thường xuyên. Queue là một cấu trúc dữ liệu linear theo mô hình đầu vào đầu ra (FIFO),... tức là việc loại bỏ xảy ra ở phía trước và thêm vào xảy ra ở phía sau. Hãy tưởng tượng nó như điểm thanh toán tại cửa hàng tạp hóa. Khách hàng đến quầy thanh toán đầu tiên được phục vụ trước. Họ chỉ có thể tham gia hàng đợi từ phía sau hàng, và sau khi được phục vụ, họ rời đi từ phía trước hàng.</p>
+            <h2 class="heading">Cấu trúc dữ liệu Linear</h2>
+            <p>Cấu trúc dữ liệu linear là các loại cấu trúc dữ liệu trong đó các phần tử được lưu trữ theo thứ tự tuần tự. Các phần tử được tổ chức sao cho mỗi phần tử được liên kết trực tiếp với phần tử trước và phần tử sau của nó. Tuy nhiên, phần tử đầu tiên chỉ được liên kết với phần tử trước của nó và phần tử cuối cùng chỉ được liên kết với phần tử kế tiếp của nó.</p>
+            <p>Queue tuân thủ mô hình sắp xếp này, và chúng ta có thể thấy điều đó thông qua ví dụ về hàng đợi tại quầy thanh toán của cửa hàng tạp hóa của chúng ta. Mỗi khách hàng đến quầy thanh toán đại diện cho một phần tử. Khách hàng đầu tiên có một liên kết với khách hàng trước đó, khách hàng cuối cùng có một liên kết với khách hàng kế tiếp và mọi khách hàng khác ở giữa có một liên kết với khách hàng trước và khách hàng kế tiếp.</p>
+            <h2 class="heading">Các trường hợp sử dụng cho Queue</h2>
+            <p>Có một số trường hợp sử dụng cho hàng đợi trong lập trình và thực tế. Một số trong số chúng bao gồm những điều sau:</p>
+            <h2 class="heading">Máy in bàn</h2>
+            <p>Khi bạn gửi tài liệu đến máy in, chúng được in theo cùng thứ tự mà chúng được gửi và điều này rất hữu ích khi bạn cố gắng in các tài liệu theo một thứ tự cụ thể. Máy in đảm bảo các trang không bị lẫn lộn.</p>
+            <h2 class="heading">Cập nhật hàng đợi trình phát nhạc</h2>
+            <p>Đôi khi, trong khi chúng ta đang làm việc, chúng ta có những bài hát yêu thích để duy trì động lực. Chức năng hàng đợi của trình phát nhạc đảm bảo bạn nghe các bài hát được lựa chọn của mình theo cách mà nó được sắp xếp.</p>
+            <h2 class="heading">Hàng đợi dịch vụ khách hàng</h2>
+            <p>Nếu bạn đến ngân hàng để khiếu nại, họ họ sẽ để bạn xếp vào hàng đợi và người tiếp theo trong hàng sẽ không được gọi cho đến khi vấn đề của khách hàng hiện tại được giải quyết.</p>
+            <h2 class="heading">Chia sẻ tệp giữa hai quy trình</h2>
+            <p>Khi chuyển tệp từ một thiết bị sang thiết bị khác, các tệp được nhận ở đầu nhận theo cùng thứ tự mà chúng được gửi, bất kể thời gian mà một trong số chúng mất để hoàn thành.</p>
+            <h2 class="heading">Triển khai Queue</h2>
+            <p>Hàng đợi có thể được triển khai bằng bất kỳ ngôn ngữ lập trình nào, nhưng sự tập trung của chúng ta là vào cách tạo chúng bằng cách sử dụng JavaScript. Trong JavaScript, nó cũng có thể được triển khai theo hai cách: mảng- array và danh sách liên kết. Đối với bài viết này, chúng ta sẽ triển khai hàng đợi bằng cách sử dụng mảng-array .</p>
+            <p>Các thao tác trong Queue</p>
+            <p>Đây là một số thao tác cơ bản được thực hiện trên hàng đợi:</p>
+            <ul>
+                <li>Enqueue</li>
+                <li>Dequeue</li>
+                <li>Peek</li>
+                <li>Đảo ngược một queue</li>
+            </ul>
+            <p>Đối với việc triển khai các thao tác trên, chúng ta sẽ sử dụng một ES6 class và có các thao tác khác nhau như các phương pháp.</p>
+            <h2 class="heading">Enqueue</h2>
+            <p>Bước đầu tiên là khởi tạo lớp của chúng tôi với bộ nhớ riêng của nó (một mảng nơi các phần tử queue sẽ được lưu trữ):</p>
+            <pre> class Queue {
+                constructor() {
+                    this.queue = [];
+                }
+            }
+            </pre>
+            <p>Các dòng được thêm vào đoạn code của chúng ta đại diện cho một phương thức của lớp Queue. Nó xử lý một thao tác mà thêm một mục mới vào đối tượng mảng được khởi tạo bằng phương thức constructor.</p>
+            <p>Phương thức .enqueue() chấp nhận một đối số phần tử và sau đó thêm nó vào this.queue bằng phương thức mảng .push().</p>
+            <h2 class="heading">Dequeue</h2>
+            <p>Thuật ngữ này đề cập đến việc loại bỏ một phần tử mới từ hàng đợi. Một lần nữa, phương thức mảng .shift() giải quyết điều này cho chúng ta một cách dễ dàng.</p>
+            <pre>
+                class Queue {
+                    constructor() {
+                        this.queue = [];
+                    }
+                } 
+                enqueue(element) {
+                    this.queue.push(element);
+                }
+                dequeue() {
+                    return this.dequeue.shift();
+                }
+            </pre>
+            <p>Chúng ta đã thêm một phương thức mới .dequeue(). Phương thức này không chấp nhận bất kỳ đối số nào khác phương thức trước đó. Nó trả về một phần tử từ phía trước của hàng đợi và cũng loại bỏ nó bằng phương thức mảng .shift().</p>
+            <h2 class="heading">Kết luận</h2>
+            <p>Đây là tóm tắt về những gì đã được bàn trong bài viết này:</p>
+            <p>Chúng tôi giải thích khái niệm về queue (FIFO) và cách chúng được áp dụng trong thế giới thực.
+                Chúng tôi đã tạo ra một class và thực hiện các thao tác hàng đợi khác nhau (enqueue, dequeue, peek, reverse).</p>
+                <p>Đó là tất cả. Chúng tôi đã triển khai thành công một queue và các thao tác cơ bản của nó bằng JavaScript.</p>
+                <a href="./index.html" class="btn">Quay lại trang chủ</a>
+        </div>
+    </section>
+
+    <section class="post-detail">
+        <div class="post-contain">
+            <img src="./images/post9.jpg" alt="">
+            <h2 class="heading" style="text-align: center;">Tạo Queue bằng JavaScript</h2>
+            <h2 class="heading">Giới thiệu</h2>
+            <p>Trong các cuộc trò chuyện về cấu trúc dữ liệu trong thế giới lập trình, thuật ngữ Queue được nhắc đến khá thường xuyên. Queue là một cấu trúc dữ liệu linear theo mô hình đầu vào đầu ra (FIFO),... tức là việc loại bỏ xảy ra ở phía trước và thêm vào xảy ra ở phía sau. Hãy tưởng tượng nó như điểm thanh toán tại cửa hàng tạp hóa. Khách hàng đến quầy thanh toán đầu tiên được phục vụ trước. Họ chỉ có thể tham gia hàng đợi từ phía sau hàng, và sau khi được phục vụ, họ rời đi từ phía trước hàng.</p>
+            <h2 class="heading">Cấu trúc dữ liệu Linear</h2>
+            <p>Cấu trúc dữ liệu linear là các loại cấu trúc dữ liệu trong đó các phần tử được lưu trữ theo thứ tự tuần tự. Các phần tử được tổ chức sao cho mỗi phần tử được liên kết trực tiếp với phần tử trước và phần tử sau của nó. Tuy nhiên, phần tử đầu tiên chỉ được liên kết với phần tử trước của nó và phần tử cuối cùng chỉ được liên kết với phần tử kế tiếp của nó.</p>
+            <p>Queue tuân thủ mô hình sắp xếp này, và chúng ta có thể thấy điều đó thông qua ví dụ về hàng đợi tại quầy thanh toán của cửa hàng tạp hóa của chúng ta. Mỗi khách hàng đến quầy thanh toán đại diện cho một phần tử. Khách hàng đầu tiên có một liên kết với khách hàng trước đó, khách hàng cuối cùng có một liên kết với khách hàng kế tiếp và mọi khách hàng khác ở giữa có một liên kết với khách hàng trước và khách hàng kế tiếp.</p>
+            <h2 class="heading">Các trường hợp sử dụng cho Queue</h2>
+            <p>Có một số trường hợp sử dụng cho hàng đợi trong lập trình và thực tế. Một số trong số chúng bao gồm những điều sau:</p>
+            <h2 class="heading">Máy in bàn</h2>
+            <p>Khi bạn gửi tài liệu đến máy in, chúng được in theo cùng thứ tự mà chúng được gửi và điều này rất hữu ích khi bạn cố gắng in các tài liệu theo một thứ tự cụ thể. Máy in đảm bảo các trang không bị lẫn lộn.</p>
+            <h2 class="heading">Cập nhật hàng đợi trình phát nhạc</h2>
+            <p>Đôi khi, trong khi chúng ta đang làm việc, chúng ta có những bài hát yêu thích để duy trì động lực. Chức năng hàng đợi của trình phát nhạc đảm bảo bạn nghe các bài hát được lựa chọn của mình theo cách mà nó được sắp xếp.</p>
+            <h2 class="heading">Hàng đợi dịch vụ khách hàng</h2>
+            <p>Nếu bạn đến ngân hàng để khiếu nại, họ họ sẽ để bạn xếp vào hàng đợi và người tiếp theo trong hàng sẽ không được gọi cho đến khi vấn đề của khách hàng hiện tại được giải quyết.</p>
+            <h2 class="heading">Chia sẻ tệp giữa hai quy trình</h2>
+            <p>Khi chuyển tệp từ một thiết bị sang thiết bị khác, các tệp được nhận ở đầu nhận theo cùng thứ tự mà chúng được gửi, bất kể thời gian mà một trong số chúng mất để hoàn thành.</p>
+            <h2 class="heading">Triển khai Queue</h2>
+            <p>Hàng đợi có thể được triển khai bằng bất kỳ ngôn ngữ lập trình nào, nhưng sự tập trung của chúng ta là vào cách tạo chúng bằng cách sử dụng JavaScript. Trong JavaScript, nó cũng có thể được triển khai theo hai cách: mảng- array và danh sách liên kết. Đối với bài viết này, chúng ta sẽ triển khai hàng đợi bằng cách sử dụng mảng-array .</p>
+            <p>Các thao tác trong Queue</p>
+            <p>Đây là một số thao tác cơ bản được thực hiện trên hàng đợi:</p>
+            <ul>
+                <li>Enqueue</li>
+                <li>Dequeue</li>
+                <li>Peek</li>
+                <li>Đảo ngược một queue</li>
+            </ul>
+            <p>Đối với việc triển khai các thao tác trên, chúng ta sẽ sử dụng một ES6 class và có các thao tác khác nhau như các phương pháp.</p>
+            <h2 class="heading">Enqueue</h2>
+            <p>Bước đầu tiên là khởi tạo lớp của chúng tôi với bộ nhớ riêng của nó (một mảng nơi các phần tử queue sẽ được lưu trữ):</p>
+            <pre> class Queue {
+                constructor() {
+                    this.queue = [];
+                }
+            }
+            </pre>
+            <p>Các dòng được thêm vào đoạn code của chúng ta đại diện cho một phương thức của lớp Queue. Nó xử lý một thao tác mà thêm một mục mới vào đối tượng mảng được khởi tạo bằng phương thức constructor.</p>
+            <p>Phương thức .enqueue() chấp nhận một đối số phần tử và sau đó thêm nó vào this.queue bằng phương thức mảng .push().</p>
+            <h2 class="heading">Dequeue</h2>
+            <p>Thuật ngữ này đề cập đến việc loại bỏ một phần tử mới từ hàng đợi. Một lần nữa, phương thức mảng .shift() giải quyết điều này cho chúng ta một cách dễ dàng.</p>
+            <pre>
+                class Queue {
+                    constructor() {
+                        this.queue = [];
+                    }
+                } 
+                enqueue(element) {
+                    this.queue.push(element);
+                }
+                dequeue() {
+                    return this.dequeue.shift();
+                }
+            </pre>
+            <p>Chúng ta đã thêm một phương thức mới .dequeue(). Phương thức này không chấp nhận bất kỳ đối số nào khác phương thức trước đó. Nó trả về một phần tử từ phía trước của hàng đợi và cũng loại bỏ nó bằng phương thức mảng .shift().</p>
+            <h2 class="heading">Kết luận</h2>
+            <p>Đây là tóm tắt về những gì đã được bàn trong bài viết này:</p>
+            <p>Chúng tôi giải thích khái niệm về queue (FIFO) và cách chúng được áp dụng trong thế giới thực.
+                Chúng tôi đã tạo ra một class và thực hiện các thao tác hàng đợi khác nhau (enqueue, dequeue, peek, reverse).</p>
+                <p>Đó là tất cả. Chúng tôi đã triển khai thành công một queue và các thao tác cơ bản của nó bằng JavaScript.</p>
+                <a href="./index.html" class="btn">Quay lại trang chủ</a>
+        </div>
+    </section>
+
+    <footer class="active">
+        <p>© 2024 by Hoang Nguyen Minh Phuoc</p>
+    </footer>
+    <script src="./js/script.js"></script>
+</body>
+</html>
