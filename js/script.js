@@ -80,7 +80,7 @@ resumeBtns.forEach((btn,idx) => {
 });
 
 const postBox =  document.querySelectorAll('.posts-box');
-
+const posts = document.querySelector('.posts');
 
 postBox.forEach((btn,idx) => {
     btn.addEventListener('click', () => {
@@ -95,5 +95,22 @@ postBox.forEach((btn,idx) => {
             detail.classList.remove('active');
         });
         postDetails[idx].classList.add('active');
+    });
+});
+
+document.querySelectorAll('.btn').forEach(function (button) {
+    button.addEventListener('click', function (event) {
+        event.preventDefault(); // Ngừng hành động mặc định của thẻ <a>
+
+        // Lấy tất cả các phần tử có class post-detail
+        const postDetails = document.querySelectorAll('.post-detail');
+
+        // Duyệt qua tất cả phần tử và loại bỏ class active
+        postDetails.forEach(function(detail) {
+            detail.classList.remove('active');
+        });
+
+        // Thêm class active vào phần tử posts
+        posts.classList.add('active');
     });
 });

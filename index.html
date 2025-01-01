@@ -354,7 +354,7 @@
             <p>Khác với Java, JavaScript dựa trên prototype và không bị ràng buộc vào một mẫu mã cụ thể. Các bản cập nhật gần đây của JavaScript đã cho phép xây dựng các class, nhưng việc này không phải là yêu cầu bắt buộc. Ví dụ:</p>
             <pre>console.log("Here's a bag of Cheese curls");</pre>
             <p>Với JavaScript, bạn không cần phải thêm các class hoặc function - bạn chỉ cần viết những gì bạn muốn xảy ra trong một dòng.</p>
-            <a href="./index.html" class="btn">Quay lại trang chủ</a>
+            <a href="./" class="btn">Quay lại</a>
         </div>
     </section>
 
@@ -419,7 +419,7 @@
             <p>Chúng tôi giải thích khái niệm về queue (FIFO) và cách chúng được áp dụng trong thế giới thực.
                 Chúng tôi đã tạo ra một class và thực hiện các thao tác hàng đợi khác nhau (enqueue, dequeue, peek, reverse).</p>
                 <p>Đó là tất cả. Chúng tôi đã triển khai thành công một queue và các thao tác cơ bản của nó bằng JavaScript.</p>
-                <a href="/index.html" class="btn">Quay lại trang chủ</a>
+                <a href="./" class="btn">Quay lại</a>
         </div>
     </section>
 
@@ -545,7 +545,7 @@
                             <p>Ngoài ra còn có một số coding style phổ biến khác như Google Javascript Style, Airbnb Javascript Style, StandardJs. Bên cạnh đó cũng có tool tự động format code của bạn theo một chuẩn có sẵn như JSLint, JSHint, ESLint.</p>
                             <h2 class="heading">Tạm kết</h2>
                             <p>Trên đây là một số coding styles trong javascript mình thường sử dụng. Điều này giúp mình mỗi khi đọc lại code mình mất ít thời gian hơn để hiểu đoạn code đó, mục đích của nó là gì. Hy vọng sẽ giúp các bạn mới học lập trình Javascript. Nếu có ý kiến hoặc đóng góp các bạn comment xây dựng bên dưới nhé. Chúc các bạn học tốt.</p>
-                      <a href="/index.html" class="btn">Quay lại trang chủ</a>
+                      <a href="./" class="btn">Quay lại</a>
         </div>
     </section>
 
@@ -582,7 +582,7 @@
                 <p>Tuy là một ngôn ngữ weakly-typed (Nhưng có thể được khắc phục bằng TypeScript), JS vẫn là một lựa chọn mình đánh giá xứng đáng cho các bạn để bắt đầu "nghiệp lập trình" của bản thân.</p>
                 <p>Hy vọng rồi mình sẽ có cơ hội chia sẻ thêm cho các bạn về phương pháp học JS, còn bài viết này mình chỉ muốn nói rằng "ngôn ngữ không có tội", quan trọng là bản thân đã lựa chọn thì hãy tìm hiểu theo đuổi đến cùng.</p>
                 <p>Còn bạn nghĩ thế nào, liệu JS có phải là một ngôn ngữ đáng học, liệu nó có thực sự "sơ đẳng" đến vậy? Thì hãy để lại những ý kiến của các bạn ở phần bình luận nhé. </p>
-                <a href="./index.html" class="btn">Quay lại trang chủ</a>
+                <a href="./" class="btn">Quay lại</a>
         </div>
     </section>
 
@@ -607,267 +607,802 @@
               }</pre>
               <h2 class="heading">Catching specific exceptions</h2>
               <p>Tuy nhiên, trong hầu hết các trường hợp, bắt mọi trường hợp ngoại lệ được ném ra được coi là hành vi xấu. Việc nắm bắt và phản ứng cụ thể với các trường hợp ngoại lệ mà bạn mong đợi gặp phải sẽ dễ quản lý hơn nhiều. Để thực hiện điều này, chỉ cần kiểm tra kiểu trường hợp ngoại lệ trước khi phản ứng với nó.</p>
-                <a href="./index.html" class="btn">Quay lại trang chủ</a>
+              <pre>try {
+                // ...
+              } catch (e) {
+                 if ( e instanceof CustomExceptionError ) {
+                  // ...
+                }
+              }</pre>
+              <p>Mặc dù JavaScript cung cấp khả năng thêm các điều kiện trực tiếp trong định nghĩa catch, nhưng hành vi này được coi là không chuẩn, vì vậy cách đáng tin cậy hơn để triển khai các mệnh đề catch có điều kiện là sử dụng một khối có điều kiện trong catch để kiểm tra và phản ứng với trường hợp lỗi . Với suy nghĩ này, bạn có thể thấy cách một quy trình thử bắt đơn giản có thể được mở rộng thành quy trình công việc phức tạp hơn nhiều, cho phép bạn xử lý lỗi theo nhiều cách khác nhau.</p>
+              <pre>try {
+                // ...
+              } catch (e) {
+               if ( e instanceof CustomExceptionError ) {
+                  // ...
+                } else if ( e instanceof OtherExceptionError ) {
+                  // ...
+                } else {
+                  // ...
+                }
+              }</pre>
+              <h2 class="heading">Khối Finally</h2>
+              <p>Câu lệnh finally cho phép bạn thực thi mã, sau khi try và catch, bất kể kết quả như thế nào.
+
+                Cú pháp:</p>
+                <pre>try {
+                    Block of code to try
+                  }
+                  catch(err) {
+                    Block of code to handle errors
+                  }
+                  finally {
+                    Block of code to be executed regardless of the try / catch result
+                  }</pre>
+                  <h2 class="heading">Try-Catch trong xử lý bất đồng bộ</h2>
+                  <p>Chúng ta thường sử dụng async – await cho việc xử lý bất đồng bộ trong Javascript, và chúng ta còn có thể sử dụng try...catch block để catch rejected promises và xử lý rejected promises một cách uyển chuyển. Ví dụ:</p>
+                  <pre>(async () =&gt; {
+                    try {
+                      await new Promise((resolve, reject) =&gt; {
+                        reject('something wrong!')
+                      })
+                    } catch (error) {
+                      console.log(error);
+                    }
+                  })();</pre>
+                  <p>Trong đoạn code trên, vì chúng ta reject promise trong try block, nên catch block bắt được lỗi trong reject promise và log ra: "something wrong!"</p>
+                  <p>Hàm trên trông có vẻ giống với try...catch block bình thường, nhưng thực sự thì điều đó không đúng, vì đây là một async funcion. Một async function chỉ trả về các promises, nên chúng ta không thể return bất cứ thứ gì thay vì promises trong try...catch block. Khối catch trong async function chỉ là một cách viết tắt cho catch function, hàm mà được chuỗi cùng với then function.</p>
+                  <h2 class="heading">Throw</h2>
+                  <p>Khi chương trình xảy ra lỗi, JavaScript thường sẽ dừng và tạo ra thông báo lỗi. Thuật ngữ kỹ thuật cho điều này là: JavaScript sẽ ném một ngoại lệ (ném một lỗi). Ở phần trên, bạn đã học cách xử lý ngoại lệ bằng cách sử dụng câu lệnh try…catch trong JavaScript. Câu lệnh try...catch xử lý ngoại lệ theo cách tiêu chuẩn do JavaScript cung cấp. Tuy nhiên, bạn có thể sử dụng câu lệnh throw để bỏ qua các ngoại lệ do người dùng định nghĩa.</p>
+                  <p>Trong JavaScript, câu lệnh throw xử lý các ngoại lệ do người dùng định nghĩa. Về mặt kỹ thuật, bạn có thể ném một ngoại lệ (ném một lỗi). Các ngoại lệ trong JavaScript có thể là String, a Number, a Boolean or an Object.</p>
+                  <p>Ví dụ:</p>
+                  <pre>throw "Too big";    // throw a text
+                    throw 500;          // throw a number</pre>
+                    <p>Nếu bạn sử dụng throw cùng với try và catch, bạn có thể kiểm soát luồng chương trình và tạo thông báo lỗi tùy chỉnh. Cú pháp:</p>
+                    <pre>try {
+                        // khối try
+                        throw exception;
+                    } 
+                    catch (error) {
+                        // khối catch  
+                    }</pre>
+                    <p>Ví dụ:</p>
+                    <pre>let number = 100;
+                        try {
+                            if(number > 500) {
+                                console.log('OK');
+                            }
+                            else {
+                                // Câu lệnh throw do người dùng định nghĩa
+                                throw new Error('The number is low');
+                            }
+                            // Nếu throw được thực thi, đoạn code bên dưới sẽ không được thực thi
+                            console.log('hello');
+                        }
+                        catch(error) {
+                            console.log('Lỗi đã được bắt!'); 
+                            console.log('Error message: ' + error);  
+                        }</pre>
+                        <h2 class="heading">Phương thức onError() </h2>
+                        <p>Mặc dù chúng ta có thể gói mọi đoạn mã trong một khối try-catch chắc chắn sẽ giải quyết các lỗi không mong muốn, nhưng nó không bền vững và vẫn mở ứng dụng ra các vấn đề không có kế hoạch. Trình xử lý sự kiện onerror là tính năng đầu tiên hỗ trợ xử lý lỗi trong JavaScript. Sự kiện lỗi được kích hoạt trên đối tượng window bất cứ khi nào một ngoại lệ xảy ra trên trang.</p>
+                        <pre>window.onError = function(message, source, lineno, colno, error) {
+                            // ...
+                          }</pre>
+                          <h2 class="heading">window.onError = function(message, source, lineno, colno, error) {
+                            // ...
+                          }</h2>
+                <a href="./" class="btn">Quay lại</a>
         </div>
     </section>
 
     <section class="post-detail">
         <div class="post-contain">
             <img src="./images/post6.jpg" alt="">
-            <h2 class="heading" style="text-align: center;">Tạo Queue bằng JavaScript</h2>
-            <h2 class="heading">Giới thiệu</h2>
-            <p>Trong các cuộc trò chuyện về cấu trúc dữ liệu trong thế giới lập trình, thuật ngữ Queue được nhắc đến khá thường xuyên. Queue là một cấu trúc dữ liệu linear theo mô hình đầu vào đầu ra (FIFO),... tức là việc loại bỏ xảy ra ở phía trước và thêm vào xảy ra ở phía sau. Hãy tưởng tượng nó như điểm thanh toán tại cửa hàng tạp hóa. Khách hàng đến quầy thanh toán đầu tiên được phục vụ trước. Họ chỉ có thể tham gia hàng đợi từ phía sau hàng, và sau khi được phục vụ, họ rời đi từ phía trước hàng.</p>
-            <h2 class="heading">Cấu trúc dữ liệu Linear</h2>
-            <p>Cấu trúc dữ liệu linear là các loại cấu trúc dữ liệu trong đó các phần tử được lưu trữ theo thứ tự tuần tự. Các phần tử được tổ chức sao cho mỗi phần tử được liên kết trực tiếp với phần tử trước và phần tử sau của nó. Tuy nhiên, phần tử đầu tiên chỉ được liên kết với phần tử trước của nó và phần tử cuối cùng chỉ được liên kết với phần tử kế tiếp của nó.</p>
-            <p>Queue tuân thủ mô hình sắp xếp này, và chúng ta có thể thấy điều đó thông qua ví dụ về hàng đợi tại quầy thanh toán của cửa hàng tạp hóa của chúng ta. Mỗi khách hàng đến quầy thanh toán đại diện cho một phần tử. Khách hàng đầu tiên có một liên kết với khách hàng trước đó, khách hàng cuối cùng có một liên kết với khách hàng kế tiếp và mọi khách hàng khác ở giữa có một liên kết với khách hàng trước và khách hàng kế tiếp.</p>
-            <h2 class="heading">Các trường hợp sử dụng cho Queue</h2>
-            <p>Có một số trường hợp sử dụng cho hàng đợi trong lập trình và thực tế. Một số trong số chúng bao gồm những điều sau:</p>
-            <h2 class="heading">Máy in bàn</h2>
-            <p>Khi bạn gửi tài liệu đến máy in, chúng được in theo cùng thứ tự mà chúng được gửi và điều này rất hữu ích khi bạn cố gắng in các tài liệu theo một thứ tự cụ thể. Máy in đảm bảo các trang không bị lẫn lộn.</p>
-            <h2 class="heading">Cập nhật hàng đợi trình phát nhạc</h2>
-            <p>Đôi khi, trong khi chúng ta đang làm việc, chúng ta có những bài hát yêu thích để duy trì động lực. Chức năng hàng đợi của trình phát nhạc đảm bảo bạn nghe các bài hát được lựa chọn của mình theo cách mà nó được sắp xếp.</p>
-            <h2 class="heading">Hàng đợi dịch vụ khách hàng</h2>
-            <p>Nếu bạn đến ngân hàng để khiếu nại, họ họ sẽ để bạn xếp vào hàng đợi và người tiếp theo trong hàng sẽ không được gọi cho đến khi vấn đề của khách hàng hiện tại được giải quyết.</p>
-            <h2 class="heading">Chia sẻ tệp giữa hai quy trình</h2>
-            <p>Khi chuyển tệp từ một thiết bị sang thiết bị khác, các tệp được nhận ở đầu nhận theo cùng thứ tự mà chúng được gửi, bất kể thời gian mà một trong số chúng mất để hoàn thành.</p>
-            <h2 class="heading">Triển khai Queue</h2>
-            <p>Hàng đợi có thể được triển khai bằng bất kỳ ngôn ngữ lập trình nào, nhưng sự tập trung của chúng ta là vào cách tạo chúng bằng cách sử dụng JavaScript. Trong JavaScript, nó cũng có thể được triển khai theo hai cách: mảng- array và danh sách liên kết. Đối với bài viết này, chúng ta sẽ triển khai hàng đợi bằng cách sử dụng mảng-array .</p>
-            <p>Các thao tác trong Queue</p>
-            <p>Đây là một số thao tác cơ bản được thực hiện trên hàng đợi:</p>
-            <ul>
-                <li>Enqueue</li>
-                <li>Dequeue</li>
-                <li>Peek</li>
-                <li>Đảo ngược một queue</li>
-            </ul>
-            <p>Đối với việc triển khai các thao tác trên, chúng ta sẽ sử dụng một ES6 class và có các thao tác khác nhau như các phương pháp.</p>
-            <h2 class="heading">Enqueue</h2>
-            <p>Bước đầu tiên là khởi tạo lớp của chúng tôi với bộ nhớ riêng của nó (một mảng nơi các phần tử queue sẽ được lưu trữ):</p>
-            <pre> class Queue {
-                constructor() {
-                    this.queue = [];
+            <h2 class="heading">Async/Await Trong Javascript Có Làm Khó Được Bạn?</h2>
+            <p>Mọi ngôn ngữ lập trình đều không hoàn hảo, nó sẽ luôn có những ưu và nhược điểm riêng. Javascript - một trong những ngôn ngữ lập trình phổ biến nhất hiện nay, đã phải trải qua một khoảng thời gian dài khó khăn khi phải dựa vào callbacks để lập trình các đoạn code bất đồng bộ. Sau đó trong bản cập nhật ES7, JavaScript đã đưa ra một giải pháp mới được cộng đồng lập trình rất ủng hộ để giải quyết cái bài toàn bất đồng bộ chính là Async/Await.</p>
+            <h2 class="heading">Async/Await là gì?</h2>
+            <p>Trước đây, để làm việc với code bất đồng bộ, chúng ta sử dụng callback và promise, Async/Await là một cách mới để viết code bất đồng bộ, được Javascript giới thiệu từ bản cập nhật ES7. Nó được xây dựng trên Promise và tương thích với tất cả Promise dựa trên API. Trong đó:</p>
+            <p>Async được dùng để khai báo một hàm bất đồng bộ. Các hàm bất đồng bộ sẽ luôn trả về một giá trị. Việc sử dụng async chỉ đơn giản là ngụ ý rằng một lời hứa sẽ được trả lại và nếu một lời hứa không được trả lại, JavaScript sẽ tự động kết thúc nó.</p>
+            <p>Await được sử dụng để chờ một Promise. Nó chỉ có thể được sử dụng bên trong một khối Async. Từ khóa Await làm cho JavaScript đợi cho đến khi promise trả về kết quả. Cần lưu ý rằng nó chỉ làm cho khối chức năng không đồng bộ chờ đợi chứ không phải toàn bộ chương trình thực thi.</p>
+            <h2 class="heading">Cú pháp Async/Await</h2>
+            <h2 class="heading">1. Async</h2>
+            <p>Từ khóa Async được đặt trước 1 hàm làm cho hàm trả về promise.</p>
+            <p>Ví dụ:</p>
+            <pre>async function myFunction() {
+                return "Hello";
+              }</pre>
+              <p>Tương tự như trên:</p>
+              <pre>async function myFunction() {
+                return Promise.resolve("Hello");
+              }</pre>
+              <p>Dưới đây là cách sử dụng Promise:</p>
+              <pre>myFunction().then(
+                function(value) { /* code if successful */ },
+                function(error) { /* code if some error */ }
+              );</pre>
+              <h2 class="heading">2. Await</h2>
+              <p>Từ khóa Await được đặt trước 1 hàm làm cho hàm chờ một promise.</p>
+              <pre>let value = await promise;</pre>
+              <p>Từ khóa await chỉ có thể được sử dụng bên trong một hàm không đồng bộ.</p>
+              <p>Ví dụ:</p>
+              <pre>
+                &lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                &lt;body&gt;
+                
+                &lt;h2&gt;JavaScript async / await&lt;/h2&gt;
+                
+                &lt;h1 id="demo"&gt;&lt;/h1&gt;
+                
+                &lt;script&gt;
+                async function myDisplay() {
+                  let myPromise = new Promise(function(myResolve, myReject) {
+                    myResolve("I love You !!");
+                  });
+                  document.getElementById("demo").innerHTML = await myPromise;
                 }
-            }
-            </pre>
-            <p>Các dòng được thêm vào đoạn code của chúng ta đại diện cho một phương thức của lớp Queue. Nó xử lý một thao tác mà thêm một mục mới vào đối tượng mảng được khởi tạo bằng phương thức constructor.</p>
-            <p>Phương thức .enqueue() chấp nhận một đối số phần tử và sau đó thêm nó vào this.queue bằng phương thức mảng .push().</p>
-            <h2 class="heading">Dequeue</h2>
-            <p>Thuật ngữ này đề cập đến việc loại bỏ một phần tử mới từ hàng đợi. Một lần nữa, phương thức mảng .shift() giải quyết điều này cho chúng ta một cách dễ dàng.</p>
-            <pre>
-                class Queue {
-                    constructor() {
-                        this.queue = [];
+                
+                myDisplay();
+                &lt;/script&gt;
+                
+                &lt;/body&gt;
+                &lt;/html&gt;
+                </pre>
+                <p>Những điều cần lưu ý khi sử dụng Async/Await</p>
+                <h2 class="heading">1. Chúng ta không thể sử dụng Await bên trong các hàm thông thường</h2>
+                <p>Ví dụ:</p>
+                <pre>function firstAsync() {
+                    let promise = Promise.resolve(10);
+                    let result = await promise; // Syntax error
+                  }</pre>
+                  <p>Để hàm trên hoạt động bình thường, chúng ta cần thêm từ khóa async trước function firstAsync();</p>
+                  <h2 class="heading">2. Async/Await thực hiện tuần tự</h2>
+                  <p>Đây không hẳn là điều xấu, nhưng thực hiện song song sẽ nhanh hơn nhiều.</p>
+                  <p>Ví dụ:</p>
+                  <pre>async function sequence() {
+                    await promise1(50); // Wait 50ms…
+                    await promise2(50); // …then wait another 50ms.
+                    return "done!";
+                  }</pre>
+                  <p>Đoạn code trên mất 100ms để hoàn thành, không phải một lượng thời gian lớn nhưng vẫn chậm. Điều này xảy ra là do nó đang diễn ra theo trình tự. Hai hàm được trả lại, cả hai đều mất 50ms để hoàn thành. Hàm thứ hai chỉ thực hiện sau khi hàm đầu tiên được giải quyết. Đây không phải là một thực tiễn tốt, vì các yêu cầu lớn có thể rất tốn thời gian. Chúng ta phải thực hiện song song.</p>
+                  <p>Chúng ta có thể làm được điều đó bằng cách sử dụng Promise.all()</p>
+                  <p>Theo MDN: "Phương thức Promise.all(iterable) trả ra một Promise mới và promise mới này chỉ được kết thúc khi tất cả các promise trong iterable kết thúc hoặc có một promise nào đó xử lý thất bại. Kết quả của promise mới này là một mảng chứa kết quả của tất cả các promise theo đúng thứ tự hoặc kết quả lỗi của promise gây lỗi."</p>
+                  <p>Ví dụ:</p>
+                  <pre>async function sequence() {
+                    await Promise.all([promise1(), promise2()]);  
+                    return "done!";
+                }</pre>
+                <p>Hàm Promise.all() giải quyết khi tất cả các lời hứa bên trong có thể lặp được giải quyết và sau đó trả về kết quả.</p>
+                <h2 class="heading">Xử lí lỗi với Async/Await</h2>
+                <p>Kết quả bình thường khi bạn sử dụng async/await là một kết quả đã được resolve. Nhưng khi promise bị reject và exception xảy ra thì phải làm gì? Chúng ta có thể dùng try…catch để giải quyết các lỗi này như các hàm bình thường khác.</p>
+                <p>Ví dụ:</p>
+                <p>Nếu một promise giải quyết bình thường, sau đó await promisetrả về kết quả. Nhưng trong trường hợp từ chối, nó sẽ ném lỗi, giống như có một câu lệnh throw tại dòng đó.</p>
+                <pre>async function f() {
+                    await Promise.reject(new Error("Whoops!"));
+                  }</pre>
+                  <p>Trong tình huống thực tế, lời hứa có thể mất một thời gian trước khi nó từ chối. Trong trường hợp đó sẽ có độ trễ trước khi await đưa ra lỗi.</p>
+                  <p>Chúng ta có thể bắt lỗi đó bằng cách sử dụng try..catch, giống như cách thông thường throw:</p>
+                  <pre>async function f() {
+
+                    try {
+                      let response = await fetch('http://no-such-url');
+                    } catch(err) {
+                      alert(err); // TypeError: failed to fetch
                     }
-                } 
-                enqueue(element) {
-                    this.queue.push(element);
-                }
-                dequeue() {
-                    return this.dequeue.shift();
-                }
-            </pre>
-            <p>Chúng ta đã thêm một phương thức mới .dequeue(). Phương thức này không chấp nhận bất kỳ đối số nào khác phương thức trước đó. Nó trả về một phần tử từ phía trước của hàng đợi và cũng loại bỏ nó bằng phương thức mảng .shift().</p>
-            <h2 class="heading">Kết luận</h2>
-            <p>Đây là tóm tắt về những gì đã được bàn trong bài viết này:</p>
-            <p>Chúng tôi giải thích khái niệm về queue (FIFO) và cách chúng được áp dụng trong thế giới thực.
-                Chúng tôi đã tạo ra một class và thực hiện các thao tác hàng đợi khác nhau (enqueue, dequeue, peek, reverse).</p>
-                <p>Đó là tất cả. Chúng tôi đã triển khai thành công một queue và các thao tác cơ bản của nó bằng JavaScript.</p>
-                <a href="./index.html" class="btn">Quay lại trang chủ</a>
+                  }
+                  
+                  f();</pre>
+                  <h2 class="heading">Tại sao nên dùng Async/Await?</h2>
+                  <h2 class="heading">1. Ngắn gọn và sạch sẽ</h2>
+                  <p>Ưu điểm đơn giản nhất chính là số lượng code ta cần viết đã giảm đi đáng kể. Không cần phải then rồi catch gì cả, chỉ viết như code chạy tuần tự, sau đó dùng try/catch thông thường để bắt lỗi.</p>
+                  <h2 class="heading">2. Xử lí lỗi</h2>
+                  <p>Async/await giúp ta xử lý cả error đồng bộ lẫn error bất đồng bộ theo cùng 1 cấu trúc. Tạm biệt try/catch. Với đoạn code dưới dùng promise, try/catch sẽ không bắt được lỗi nếu JSON.parselỗi do nó xảy ra bên trong promise. Ta cần gọi  .catch bên trong promise và lặp lại code xử lý error, điều mà chắc chắn sẽ trở nên rắc rối hơn cả console.logtrong đoạn code production.</p>
+                  <pre>const makeRequest = () => {
+                    try {
+                      getJSON()
+                        .then(result => {
+                          // this parse may fail
+                          const data = JSON.parse(result)
+                          console.log(data)
+                        })
+                        // uncomment this block to handle asynchronous errors
+                        // .catch((err) => {
+                        //   console.log(err)
+                        // })
+                    } catch (err) {
+                      console.log(err)
+                    }</pre>
+                    <p>Bây giờ hãy nhìn vào đoạn code sử dụng async/await. Khối catchgiờ sẽ xử lý các lỗi parsing.</p>
+                    <pre>const makeRequest = async () => {
+                        try {
+                          // this parse may fail
+                          const data = JSON.parse(await getJSON())
+                          console.log(data)
+                        } catch (err) {
+                          console.log(err)
+                        }
+                      }</pre>
+                      <h2 class="heading">3. Câu lệnh điều kiện</h2>
+                      <p>Hãy tưởng tượng một cái gì đó giống như đoạn mã bên dưới tìm nạp một số dữ liệu và quyết định xem nó có nên trả lại dữ liệu đó hay không hoặc lấy thêm chi tiết dựa trên một số giá trị trong dữ liệu.</p>
+                      <pre>const makeRequest = () => {
+                        return getJSON()
+                          .then(data => {
+                            if (data.needsAnotherRequest) {
+                              return makeAnotherRequest(data)
+                                .then(moreData => {
+                                  console.log(moreData)
+                                  return moreData
+                                })
+                            } else {
+                              console.log(data)
+                              return data
+                            }
+                          })
+                      }</pre>
+                      <p>Chỉ nhìn vào đoạn code trên thôi cũng đã khiến bạn đau đầu. Thật dễ dàng bị lạc trong tất cả các câu lệnh lồng nhau (6 cấp độ), dấu ngoặc nhọn và trả về chỉ cần thiết để truyền tải kết quả cuối cùng cho đến hàm chính.</p>
+                      <p>Khi sử dụng async/await, ta sẽ có đoạn code mới dễ đọc hơn.</p>
+                      <pre>const makeRequest = async () => {
+                        const data = await getJSON()
+                        if (data.needsAnotherRequest) {
+                          const moreData = await makeAnotherRequest(data);
+                          console.log(moreData)
+                          return moreData
+                        } else {
+                          console.log(data)
+                          return data    
+                        }
+                      }</pre>
+                      <p>Với promise hoặc callback, việc kết hợp if/else hoặc retry với code asynchnous là một cực hình vì ta phải viết code lòng vòng, rắc rối. Với async/await, việc này vô cùng dễ dàng.</p>
+                      <h2 class="heading">4. Debug</h2>
+                      <p>Cuối cùng khi bạn làm việc với async/await, việc debug trở nên rất đơn giản. Với async / await, bạn không cần nhiều các arrow function và bạn có thể thực hiện các cuộc gọi chờ chính xác như thể chúng là các cuộc gọi đồng bộ thông thường.</p>
+                      <p>Mỗi lần dùng await được tính là một dòng code, do đó ta có thể đặt debugger để debug từng dòng như thường.</p>
+                <a href="./" class="btn">Quay lại</a>
         </div>
     </section>
 
     <section class="post-detail">
         <div class="post-contain">
             <img src="./images/post7.jpg" alt="">
-            <h2 class="heading" style="text-align: center;">Tạo Queue bằng JavaScript</h2>
-            <h2 class="heading">Giới thiệu</h2>
-            <p>Trong các cuộc trò chuyện về cấu trúc dữ liệu trong thế giới lập trình, thuật ngữ Queue được nhắc đến khá thường xuyên. Queue là một cấu trúc dữ liệu linear theo mô hình đầu vào đầu ra (FIFO),... tức là việc loại bỏ xảy ra ở phía trước và thêm vào xảy ra ở phía sau. Hãy tưởng tượng nó như điểm thanh toán tại cửa hàng tạp hóa. Khách hàng đến quầy thanh toán đầu tiên được phục vụ trước. Họ chỉ có thể tham gia hàng đợi từ phía sau hàng, và sau khi được phục vụ, họ rời đi từ phía trước hàng.</p>
-            <h2 class="heading">Cấu trúc dữ liệu Linear</h2>
-            <p>Cấu trúc dữ liệu linear là các loại cấu trúc dữ liệu trong đó các phần tử được lưu trữ theo thứ tự tuần tự. Các phần tử được tổ chức sao cho mỗi phần tử được liên kết trực tiếp với phần tử trước và phần tử sau của nó. Tuy nhiên, phần tử đầu tiên chỉ được liên kết với phần tử trước của nó và phần tử cuối cùng chỉ được liên kết với phần tử kế tiếp của nó.</p>
-            <p>Queue tuân thủ mô hình sắp xếp này, và chúng ta có thể thấy điều đó thông qua ví dụ về hàng đợi tại quầy thanh toán của cửa hàng tạp hóa của chúng ta. Mỗi khách hàng đến quầy thanh toán đại diện cho một phần tử. Khách hàng đầu tiên có một liên kết với khách hàng trước đó, khách hàng cuối cùng có một liên kết với khách hàng kế tiếp và mọi khách hàng khác ở giữa có một liên kết với khách hàng trước và khách hàng kế tiếp.</p>
-            <h2 class="heading">Các trường hợp sử dụng cho Queue</h2>
-            <p>Có một số trường hợp sử dụng cho hàng đợi trong lập trình và thực tế. Một số trong số chúng bao gồm những điều sau:</p>
-            <h2 class="heading">Máy in bàn</h2>
-            <p>Khi bạn gửi tài liệu đến máy in, chúng được in theo cùng thứ tự mà chúng được gửi và điều này rất hữu ích khi bạn cố gắng in các tài liệu theo một thứ tự cụ thể. Máy in đảm bảo các trang không bị lẫn lộn.</p>
-            <h2 class="heading">Cập nhật hàng đợi trình phát nhạc</h2>
-            <p>Đôi khi, trong khi chúng ta đang làm việc, chúng ta có những bài hát yêu thích để duy trì động lực. Chức năng hàng đợi của trình phát nhạc đảm bảo bạn nghe các bài hát được lựa chọn của mình theo cách mà nó được sắp xếp.</p>
-            <h2 class="heading">Hàng đợi dịch vụ khách hàng</h2>
-            <p>Nếu bạn đến ngân hàng để khiếu nại, họ họ sẽ để bạn xếp vào hàng đợi và người tiếp theo trong hàng sẽ không được gọi cho đến khi vấn đề của khách hàng hiện tại được giải quyết.</p>
-            <h2 class="heading">Chia sẻ tệp giữa hai quy trình</h2>
-            <p>Khi chuyển tệp từ một thiết bị sang thiết bị khác, các tệp được nhận ở đầu nhận theo cùng thứ tự mà chúng được gửi, bất kể thời gian mà một trong số chúng mất để hoàn thành.</p>
-            <h2 class="heading">Triển khai Queue</h2>
-            <p>Hàng đợi có thể được triển khai bằng bất kỳ ngôn ngữ lập trình nào, nhưng sự tập trung của chúng ta là vào cách tạo chúng bằng cách sử dụng JavaScript. Trong JavaScript, nó cũng có thể được triển khai theo hai cách: mảng- array và danh sách liên kết. Đối với bài viết này, chúng ta sẽ triển khai hàng đợi bằng cách sử dụng mảng-array .</p>
-            <p>Các thao tác trong Queue</p>
-            <p>Đây là một số thao tác cơ bản được thực hiện trên hàng đợi:</p>
+            <h2 class="heading">Có Nên Chọn JavaScript Là Ngôn Ngữ Lập Trình Đầu Tiên?</h2>
+            <p>Hàng năm có hàng chục hoặc hàng trăm ngôn ngữ mới ra đời. Quyết định ngôn ngữ lập trình đầu tiên của bạn giữa ma trận hàng trăm ngôn ngữ lập trình sẽ rất đau đầu và thú vị. Bạn sẽ mất hàng trăm giờ thực hành để thậm chí trở nên thành thạo từ xa với ngôn ngữ lập trình đầu tiên của mình.</p>
+            <p>Vì vậy, bạn nên xem xét các yếu tố sau:</p>
             <ul>
-                <li>Enqueue</li>
-                <li>Dequeue</li>
-                <li>Peek</li>
-                <li>Đảo ngược một queue</li>
+                <li>thị trường việc làm với ngôn ngữ đó</li>
+                <li>triển vọng dài hạn </li>
+                <li>ngôn ngữ dễ học như thế nào</li>
+                <li>bạn có thể làm những dự án nào trong khi đang học
+                </li>
             </ul>
-            <p>Đối với việc triển khai các thao tác trên, chúng ta sẽ sử dụng một ES6 class và có các thao tác khác nhau như các phương pháp.</p>
-            <h2 class="heading">Enqueue</h2>
-            <p>Bước đầu tiên là khởi tạo lớp của chúng tôi với bộ nhớ riêng của nó (một mảng nơi các phần tử queue sẽ được lưu trữ):</p>
-            <pre> class Queue {
-                constructor() {
-                    this.queue = [];
-                }
-            }
-            </pre>
-            <p>Các dòng được thêm vào đoạn code của chúng ta đại diện cho một phương thức của lớp Queue. Nó xử lý một thao tác mà thêm một mục mới vào đối tượng mảng được khởi tạo bằng phương thức constructor.</p>
-            <p>Phương thức .enqueue() chấp nhận một đối số phần tử và sau đó thêm nó vào this.queue bằng phương thức mảng .push().</p>
-            <h2 class="heading">Dequeue</h2>
-            <p>Thuật ngữ này đề cập đến việc loại bỏ một phần tử mới từ hàng đợi. Một lần nữa, phương thức mảng .shift() giải quyết điều này cho chúng ta một cách dễ dàng.</p>
-            <pre>
-                class Queue {
-                    constructor() {
-                        this.queue = [];
-                    }
-                } 
-                enqueue(element) {
-                    this.queue.push(element);
-                }
-                dequeue() {
-                    return this.dequeue.shift();
-                }
-            </pre>
-            <p>Chúng ta đã thêm một phương thức mới .dequeue(). Phương thức này không chấp nhận bất kỳ đối số nào khác phương thức trước đó. Nó trả về một phần tử từ phía trước của hàng đợi và cũng loại bỏ nó bằng phương thức mảng .shift().</p>
-            <h2 class="heading">Kết luận</h2>
-            <p>Đây là tóm tắt về những gì đã được bàn trong bài viết này:</p>
-            <p>Chúng tôi giải thích khái niệm về queue (FIFO) và cách chúng được áp dụng trong thế giới thực.
-                Chúng tôi đã tạo ra một class và thực hiện các thao tác hàng đợi khác nhau (enqueue, dequeue, peek, reverse).</p>
-                <p>Đó là tất cả. Chúng tôi đã triển khai thành công một queue và các thao tác cơ bản của nó bằng JavaScript.</p>
-                <a href="./index.html" class="btn">Quay lại trang chủ</a>
+            <h2 class="heading">Có nhiều sự lựa chọn để bạn bắt đầu với ngôn ngữ đầu tiên</h2>
+            <p>Học tốt một ngôn ngữ. Sau đó, học một thứ hai. Nếu bạn tiếp tục nhảy từ ngôn ngữ này sang ngôn ngữ khác, bạn sẽ không tiến xa được. Để vượt qua những điều cơ bản, bạn cần phải học tốt ngôn ngữ đầu tiên của mình. Sau đó, ngôn ngữ thứ hai của bạn sẽ dễ dàng hơn nhiều. Từ đó, bạn có thể phân nhánh và trở thành một nhà phát triển toàn diện hơn bằng cách học nhiều ngôn ngữ:</p>
+            <ul>
+                <li>C là một ngôn ngữ tuyệt vời để tìm hiểu cách máy tính thực sự hoạt động về mặt quản lý bộ nhớ và hữu ích trong tính toán hiệu suất cao</li>
+                <li>C ++ rất tốt để phát triển trò chơi.</li>
+                <li>Python tuyệt vời cho khoa học và thống kê.</li>
+                <li>Java rất quan trọng nếu bạn muốn làm việc tại các công ty công nghệ lớn.</li>
+            </ul>
+            <p>Và lựa chọn của tôi đó là học JavaScript trước. Tại sao vậy?</p>
+            <h2 class="heading">Tại sao lựa chọn JavaScript?</h2>
+            <ul>
+                <li>Nhu cầu thị trường: Nếu bạn - giống như đại đa số những người học lập trình - muốn sử dụng kỹ năng này để kiếm việc làm, thì đây là một cân nhắc quan trọng. Như tôi đã đề cập trước đó, Java được nhắc đến trong nhiều tin tuyển dụng hơn bất kỳ ngôn ngữ lập trình nào khác. JavaScript đứng thứ hai. Thời cơ của Js đã đến khi mà đã tồn tại được 20 năm nhưng gần đây nó mới trở thành một công cụ nghiêm túc mà các công ty như Netflix, Walmart và PayPal sử dụng để xây dựng các ứng dụng xung quanh. Đồng nghĩa với việc tương lai với Js sẽ còn rộng mở.</li>
+                <li>Dễ học: Hầu hết các lập trình viên sẽ đồng ý rằng các ngôn ngữ script cấp cao tương đối dễ học. JavaScript được xếp vào loại này, cùng với Python và Ruby.</li>
+                <li>Những project bạn có thể làm: JavaScript chạy trên bất kỳ thiết bị nào có trình duyệt, ngay tại trong trình duyệt. Về cơ bản, bạn có thể xây dựng mọi thứ bằng JavaScript và chia sẻ nó ở bất cứ đâu.</li>
+            </ul>
+            <h2 class="heading">JavaScript có chậm không?</h2>
+            <p>JavaScript - có thể sử dụng cho hầu hết các mục đích thực tế, nó nhanh như các ngôn ngữ hiệu suất cao. JavaScript (Node.js) còn nhanh hơn Python, Ruby và PHP. Nó cũng nhanh bằng các ngôn ngữ hiệu suất cao như C ++, Java và Go.</p>
+            <p>Dưới đây là bảng so sánh sự toàn diện của các ngôn ngữ theo khảo sát của stackoverflow năm 2019.</p>
+            <img src="./images/thongke.png" alt="">
+            <h2 class="heading">JavaScript không được nhập tĩnh</h2>
+            <p>Giống như Python và Ruby, JavaScript được nhập động, điều này rất tiện lợi. Nhưng bạn có thể gặp rắc rối. Ở đây tôi ví dụ Array là một mảng. Tôi đặt các giá trị của nó, sau đó kiểm tra độ dài của nó - nghĩa là số phần tử mà nó chứa.</p>
+            <pre>exampleArray = [1, 2]
+                -> [1, 2]
+                exampleArray.length
+                -> 2</pre>
+                <p>Nhưng sau đó tôi vô tình gán nó thành một chuỗi.</p>
+                <pre>exampleArray = “text”
+                    -> “text”
+                    exampleArray.length
+                    -> 4</pre>
+                    <p>Các loại lỗi này thường xuyên xảy ra trong các ngôn ngữ được nhập động. Hầu hết các lập trình viên chỉ đưa ra các kiểm tra để ngăn chặn chúng và viết các kiểm tra cho phù hợp. Nếu bạn nhất thiết phải nhập tĩnh bằng ngôn ngữ lập trình đầu tiên của mình, thì tôi vẫn khuyên bạn nên học JavaScript trước. Sau đó, bạn có thể nhanh chóng chọn TypeScript.</p>
+                    <p>“TypeScript có một đường cong học tập, nhưng nếu bạn đã biết JavaScript, nó sẽ rất suôn sẻ.”</p>
+                    <h2 class="heading">Tôi muốn tạo một ứng dụng di động thì sao?</h2>
+                    <p>Tôi vẫn khuyên bạn nên học JavaScript trước. JavaScript có một số công cụ để tạo ứng dụng di động gốc, chẳng hạn như Angular Cordova và React Native. Để ứng dụng dành cho thiết bị di động của bạn thực sự làm được bất kỳ điều gì thú vị, nó có thể sẽ cần một back end thích hợp mà bạn sẽ muốn xây dựng với một frameworks phát triển web thích hợp, như Node.js + Express.js.</p>
+                    <p>Đối với những người mới bắt đầu, càng nhiều người sử dụng ứng dụng dành cho thiết bị di động, thì gần một nửa số công việc của nhà phát triển là phát triển web. So sánh điều này với chỉ 8% công việc liên quan đến phát triển ứng dụng di động.</p>
+                    <p>Triển vọng cho những công việc phát triển di động là khó dự đoán. Nhiều khía cạnh của việc phát triển, duy trì và phân phối ứng dụng di động dễ dàng hơn với JavaScript. Vì vậy, các công ty như Facebook và Google đang đầu tư mạnh mẽ vào các công cụ tốt hơn để xây dựng chúng bằng JavaScript.</p>
+                    <p>Tính đến năm 2019, phần lớn sự phát triển là phát triển web. Mọi thứ đều chạm vào nền tảng lớn đó là “web”. Và làn sóng thiết bị tiếp theo mà bạn sẽ nói chuyện xung quanh nhà và ô tô đưa đón con bạn từ trường - tất cả chúng cũng sẽ được kết nối với nhau bằng cách sử dụng web.</p>
+                    <p>Và điều đó có nghĩa là JavaScript.</p>
+                <a href="./" class="btn">Quay lại</a>
         </div>
     </section>
 
     <section class="post-detail">
         <div class="post-contain">
             <img src="./images/post8.jpg" alt="">
-            <h2 class="heading" style="text-align: center;">Tạo Queue bằng JavaScript</h2>
-            <h2 class="heading">Giới thiệu</h2>
-            <p>Trong các cuộc trò chuyện về cấu trúc dữ liệu trong thế giới lập trình, thuật ngữ Queue được nhắc đến khá thường xuyên. Queue là một cấu trúc dữ liệu linear theo mô hình đầu vào đầu ra (FIFO),... tức là việc loại bỏ xảy ra ở phía trước và thêm vào xảy ra ở phía sau. Hãy tưởng tượng nó như điểm thanh toán tại cửa hàng tạp hóa. Khách hàng đến quầy thanh toán đầu tiên được phục vụ trước. Họ chỉ có thể tham gia hàng đợi từ phía sau hàng, và sau khi được phục vụ, họ rời đi từ phía trước hàng.</p>
-            <h2 class="heading">Cấu trúc dữ liệu Linear</h2>
-            <p>Cấu trúc dữ liệu linear là các loại cấu trúc dữ liệu trong đó các phần tử được lưu trữ theo thứ tự tuần tự. Các phần tử được tổ chức sao cho mỗi phần tử được liên kết trực tiếp với phần tử trước và phần tử sau của nó. Tuy nhiên, phần tử đầu tiên chỉ được liên kết với phần tử trước của nó và phần tử cuối cùng chỉ được liên kết với phần tử kế tiếp của nó.</p>
-            <p>Queue tuân thủ mô hình sắp xếp này, và chúng ta có thể thấy điều đó thông qua ví dụ về hàng đợi tại quầy thanh toán của cửa hàng tạp hóa của chúng ta. Mỗi khách hàng đến quầy thanh toán đại diện cho một phần tử. Khách hàng đầu tiên có một liên kết với khách hàng trước đó, khách hàng cuối cùng có một liên kết với khách hàng kế tiếp và mọi khách hàng khác ở giữa có một liên kết với khách hàng trước và khách hàng kế tiếp.</p>
-            <h2 class="heading">Các trường hợp sử dụng cho Queue</h2>
-            <p>Có một số trường hợp sử dụng cho hàng đợi trong lập trình và thực tế. Một số trong số chúng bao gồm những điều sau:</p>
-            <h2 class="heading">Máy in bàn</h2>
-            <p>Khi bạn gửi tài liệu đến máy in, chúng được in theo cùng thứ tự mà chúng được gửi và điều này rất hữu ích khi bạn cố gắng in các tài liệu theo một thứ tự cụ thể. Máy in đảm bảo các trang không bị lẫn lộn.</p>
-            <h2 class="heading">Cập nhật hàng đợi trình phát nhạc</h2>
-            <p>Đôi khi, trong khi chúng ta đang làm việc, chúng ta có những bài hát yêu thích để duy trì động lực. Chức năng hàng đợi của trình phát nhạc đảm bảo bạn nghe các bài hát được lựa chọn của mình theo cách mà nó được sắp xếp.</p>
-            <h2 class="heading">Hàng đợi dịch vụ khách hàng</h2>
-            <p>Nếu bạn đến ngân hàng để khiếu nại, họ họ sẽ để bạn xếp vào hàng đợi và người tiếp theo trong hàng sẽ không được gọi cho đến khi vấn đề của khách hàng hiện tại được giải quyết.</p>
-            <h2 class="heading">Chia sẻ tệp giữa hai quy trình</h2>
-            <p>Khi chuyển tệp từ một thiết bị sang thiết bị khác, các tệp được nhận ở đầu nhận theo cùng thứ tự mà chúng được gửi, bất kể thời gian mà một trong số chúng mất để hoàn thành.</p>
-            <h2 class="heading">Triển khai Queue</h2>
-            <p>Hàng đợi có thể được triển khai bằng bất kỳ ngôn ngữ lập trình nào, nhưng sự tập trung của chúng ta là vào cách tạo chúng bằng cách sử dụng JavaScript. Trong JavaScript, nó cũng có thể được triển khai theo hai cách: mảng- array và danh sách liên kết. Đối với bài viết này, chúng ta sẽ triển khai hàng đợi bằng cách sử dụng mảng-array .</p>
-            <p>Các thao tác trong Queue</p>
-            <p>Đây là một số thao tác cơ bản được thực hiện trên hàng đợi:</p>
+            <h2 class="heading">OOP Trong Javascript Có Gì Khác Với Ngôn Ngữ Khác?</h2>
+            <p>Trước khi đọc bài viết này, bạn nên ôn lại kiến thức về object và prototype trong Javacript. Trước khi phân tích về OOP trong JavaScript, mình sẽ nhắc lại sơ 1 số tính chất trong OOP.</p>
+            <h2 class="heading">Các tính chất của OOP</h2>
+            <img src="./images/oop.png" alt="">
+            <p>Trong lập trình hướng đối tượng (OOP) có 4 tính chất là tính đóng gói (Encapsulation), tính kế thừa (Inheritance), tính đa hình (Polymorphism) và tính trừu tượng (Abstraction)</p>
+            <h2 class="heading">1. Encapsulation (Tính đóng gói):</h2>
+            <p>Tính đóng là kỹ thuật giúp bạn che giấu được những thông tin bên trong đối tượng. Mục đích chính của tính đóng gói là giúp hạn chế các lỗi khi phát triển chương trình. Tính chất này không cho phép người sử dụng các đối tượng thay đổi trạng thái nội tại của một đối tượng. Chỉ có các phương thức nội tại của đối tượng cho phép thay đổi trạng thái của nó. Việc cho phép môi trường bên ngoài tác động lên các dữ liệu nội tại của một đối tượng theo cách nào là hoàn toàn tùy thuộc vào người viết mã. Đây là tính chất đảm bảo sự toàn vẹn của đối tượng.</p>
+            <p>Các lợi ích chính mà tính đóng gói mang lại:</p>
             <ul>
-                <li>Enqueue</li>
-                <li>Dequeue</li>
-                <li>Peek</li>
-                <li>Đảo ngược một queue</li>
+                <li>Hạn chế được các truy xuất không hợp lệ tới các thuộc tính của đối tượng.</li>
+                <li>Giúp cho trạng thái của đối tượng luôn đúng.</li>
+                <li>Giúp ẩn đi những thông tin không cần thiết về đối tượng.</li>
+                <li>Cho phép bạn thay đổi cấu trúc bên trong lớp mà không ảnh hưởng tới lớp khác. </li>
             </ul>
-            <p>Đối với việc triển khai các thao tác trên, chúng ta sẽ sử dụng một ES6 class và có các thao tác khác nhau như các phương pháp.</p>
-            <h2 class="heading">Enqueue</h2>
-            <p>Bước đầu tiên là khởi tạo lớp của chúng tôi với bộ nhớ riêng của nó (một mảng nơi các phần tử queue sẽ được lưu trữ):</p>
-            <pre> class Queue {
-                constructor() {
-                    this.queue = [];
+            <h2 class="heading">2. Inheritance(Tính kế thừa):</h2>
+            <p>Kế thừa trong lập trình hướng đối tượng chính là thừa hưởng lại những thuộc tính và phương thức của một lớp. Có nghĩa là nếu lớp A kế thừa lớp B thì lớp A sẽ có những thuộc tính và phương thức của lớp B. Lớp được thừa hưởng những thuộc tính và phương thức từ lớp khác được gọi là dẫn xuất (Derived Class) hay lớp Con (Subclass) và lớp bị lớp khác kế thừa được gọi là lớp cơ sở (Base Class) hoặc lớp cha (Parent Class). </p>
+            <p>Các lợi ích của tính kế thừa:</p>
+            <ul>
+                <li>Giúp tái sử dụng lại code.</li>
+                <li>Tăng khả năng mở rộng của chương trình.</li>
+            </ul>
+            <h2 class="heading">3. Polymorphism(Tính đa hình):</h2>
+            <p>Tính đa hình thể hiện thông qua việc gửi các thông điệp (message). Việc gửi các thông điệp này có thể so sánh như việc gọi các hàm bên trong của một đối tượng. Các phương thức dùng trả lời cho một thông điệp sẽ tùy theo đối tượng mà thông điệp đó được gửi tới sẽ có phản ứng khác nhau. Người lập trình có thể định nghĩa một đặc tính (chẳng hạn thông qua tên của các phương thức) cho một loạt các đối tượng gần nhau nhưng khi thi hành thì dùng cùng một tên gọi mà sự thi hành của mỗi đối tượng sẽ tự động xảy ra tương ứng theo đặc tính của từng đối tượng mà không bị nhầm lẫn.</p>
+            <h2 class="heading">4. Abstraction(Tính trừu tượng):</h2>
+            <p>Tính trừu tượng là một tính chất mà chỉ tập trung vào những tính năng của đối tượng và ẩn đi những thông tin không cần thiết. Tính chất này giúp bạn trọng tâm hơn vào những tính năng thay vì phải quan tâm tới cách mà nó được thực hiện. </p>
+            <p>Trong phạm vi bài viết này, chúng ta sẽ bàn về 3 đặc tính của OOP (tính đóng gói, tính kế thừa, tính đa hình), so sánh cách hiện thực chúng trong Java và JavaScript.</p>
+            <h2 class="heading">OOP trong Java</h2>
+            <p>Như các bạn đã biết, Java là một ngôn ngữ hướng đối tượng, do đó việc hiện thực các đặc tính OOP rất đơn giản và nhanh gọn, dễ hiểu.</p>
+            <h2 class="heading">1. Tính đóng gói</h2>
+            <p>Tính bao đóng trong Java thể hiện bằng cách để phạm vi truy cập của các thuộc tính là private và truy xuất tới các thuộc tính này thông qua phương thức public (gọi là các setter, getter).</p>
+            <p>Ví dụ:</p>
+            <pre>class Student {
+                private String name;
+                private int age;
+                private double gpa;
+             
+                public String getName() {
+                   return name;
                 }
-            }
-            </pre>
-            <p>Các dòng được thêm vào đoạn code của chúng ta đại diện cho một phương thức của lớp Queue. Nó xử lý một thao tác mà thêm một mục mới vào đối tượng mảng được khởi tạo bằng phương thức constructor.</p>
-            <p>Phương thức .enqueue() chấp nhận một đối số phần tử và sau đó thêm nó vào this.queue bằng phương thức mảng .push().</p>
-            <h2 class="heading">Dequeue</h2>
-            <p>Thuật ngữ này đề cập đến việc loại bỏ một phần tử mới từ hàng đợi. Một lần nữa, phương thức mảng .shift() giải quyết điều này cho chúng ta một cách dễ dàng.</p>
-            <pre>
-                class Queue {
-                    constructor() {
-                        this.queue = [];
-                    }
-                } 
-                enqueue(element) {
-                    this.queue.push(element);
+             
+                public void setName(String name) {
+                   this.name = name;
                 }
-                dequeue() {
-                    return this.dequeue.shift();
+             
+                public int getAge() {
+                   return age;
                 }
-            </pre>
-            <p>Chúng ta đã thêm một phương thức mới .dequeue(). Phương thức này không chấp nhận bất kỳ đối số nào khác phương thức trước đó. Nó trả về một phần tử từ phía trước của hàng đợi và cũng loại bỏ nó bằng phương thức mảng .shift().</p>
-            <h2 class="heading">Kết luận</h2>
-            <p>Đây là tóm tắt về những gì đã được bàn trong bài viết này:</p>
-            <p>Chúng tôi giải thích khái niệm về queue (FIFO) và cách chúng được áp dụng trong thế giới thực.
-                Chúng tôi đã tạo ra một class và thực hiện các thao tác hàng đợi khác nhau (enqueue, dequeue, peek, reverse).</p>
-                <p>Đó là tất cả. Chúng tôi đã triển khai thành công một queue và các thao tác cơ bản của nó bằng JavaScript.</p>
-                <a href="./index.html" class="btn">Quay lại trang chủ</a>
+             
+                public void setAge(int age) {
+                   this.age = age;
+                }
+             
+                public double getGpa() {
+                   return gpa;
+                }
+             
+                public void setGpa(double gpa) {
+                   this.gpa = gpa;
+                }
+             
+             }</pre>
+             <p>Với cách làm này thông tin của đối tượng đã được ẩn đi, bạn chỉ có thể giao tiếp với đối tượng thông qua các phương thức. Điều này cũng giống với thực tế. Ví dụ khi bạn gặp một người lạ thì bạn không thể biết được các thuộc tính của người này (số điện thoại, sở thích, ...), kể cả khi bạn hỏi thì người này cũng chưa chắc đã trả lời cho bạn đúng sự thật (giống như phương thức không trả về giá trị thực thuộc tính mà trả về một giá trị khác).</p>
+            <h2 class="heading">2. Tính kế thừa</h2>
+            <p>Trong Java, để kế thừa một lớp bạn dùng từ khóa extends.</p>
+            <p>Ví dụ:</p>
+            <pre>class Person {
+                private String name;
+                private int age;
+             
+                public void setName(String name) {
+                   this.name = name;
+                }
+             
+                public String getName() {
+                   return name;
+                }
+             
+                public void setAge(int age) {
+                   this.age = age;
+                }
+             
+                public int getAge() {
+                   return age;
+                }
+             }
+             
+             class Student extends Person {
+                private double gpa;
+                
+                public void setGpa(double gpa) {
+                   this.gpa = gpa;
+                }
+             
+                public double getAge() {
+                   return gpa;
+                }
+             }
+             
+             class Entry {
+                public static void main(String[] args) {
+                   Student s = new Student();
+                   s.setName("Khoa");
+                   s.setAge(19);
+                   s.setGpa(10); 
+                   System.out.println("Name: " + s.getName());
+                   System.out.println("Age: " + s.getAge());
+                   System.out.println("GPA: " + s.getGpa());
+                }
+             }</pre>
+             <p>Kết quả khi chạy chương trình:</p>
+             <pre>Name: Khoa
+                Age: 19
+                GPA: 10.0</pre>
+                <p>Có thể thấy rằng lớp Student đã được thừa hưởng những phương thức của lớp Person.</p>
+            <h2 class="heading">3. Tính đa hình</h2>
+            <p>Tính đa hình trong code dưới 3 hình thức: nạp chồng phương thức, ghi đè phương thức và đa hình thông qua các đối tượng đa hình(polymorphic objects).</p>
+            <p>Ví dụ về tính đa hình với nạp chồng phương thức: Phương thức cộng sẽ có các "forms" là cộng 2 số nguyên, cộng 2 số thực, cộng 3 số nguyên, v.v.. Có thể thấy cùng là phương thức cộng nhưng lại có nhiểu kiểu khác nhau nên đây chính là biểu hiện của tính đa hình.</p>
+            <pre>package OOP;
+
+                class Calculator {
+                   public int add(int a, int b) {
+                      return a + b;
+                   }
+                
+                   public double add(double a, double b) {
+                      return a + b;
+                   }
+                
+                   public int add(int a, int b, int c) {
+                      return a + b + c;
+                   }
+                }
+                
+                public class Entry {
+                   public static void main(String[] args) {
+                      Calculator s = new Calculator();
+                      System.out.println(s.add(1, 2));
+                      System.out.println(s.add(2.1, 2.4));
+                      System.out.println(s.add(1, 2, 3));
+                   }
+                }</pre>
+                <p>Kết quả khi chạy chương trình:</p>
+                <pre>3
+                    4.5
+                    6</pre>
+            <h2 class="heading">OOP trong Javascript</h2>
+            <p>Javascript thì khác, không như Java, chúng ta cần phải áp dụng một vài thủ thuật để thực hiện các đặc tính này.</p>
+            <h2 class="heading">1. Tính đóng gói</h2>
+            <p>Trong Javascript, để thực hiện tính bao đóng, ta có thể tạo ra 1 Constructor Function, đóng gói toàn bộ các trường và hàm vào 1 object. Thông thường, các bạn hay khai báo như sau:</p>
+            <pre>function Person(firstName, lastName) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.showName = function() {
+                   console.log(this.firstName + ' ' + this.lastName);
+                };
+              }
+              
+              var psn1 = new Person('Khoa', 'Nguyen');
+              
+              // các property khai báo vào biến this có thể bị truy xuất từ bên ngoài
+              // object không còn bao đóng nữa
+              psn1.firstName = 'changed';
+              console.log(ps1.firstName); // changed</pre>
+              <p>Với các khai báo này, tính bao đóng không được đảm bảo. Các property có thể bị truy cập, thay đổi từ bên ngoài. Ở đây, ta phải sử dụng biến cục bộ.</p>
+              <pre>function Person(firstName, lastName) {
+                var fstName = firstName;
+                var lstName = lastName;
+                
+                this.setFirstName = function(firstName) { 
+                    fstName = firstName; 
+                };
+              
+                this.getFirstName = function() {
+                    return fstName; 
+                };
+                
+                this.setLastName = function(lastName) { 
+                    lstName = lastName; 
+                };
+              
+                this.getLastName = function() { 
+                    return lstName; 
+                };
+              }
+              
+              var person1 = new Person('Khoa', 'Nguyen');
+              console.log(person1.fstName); // Undefined, không thể truy cập được
+              
+              
+              console.log(person1.getFirstName()); // Khoa</pre>
+              <p>Các biến cục bộ này chỉ có thể truy xuất trong Constructor Function, nó tương đương với các trường private trong Java.</p>
+              <p>Trong javascript, không có cách nào để tạo ra các trường protected (Chỉ có thể truy cập từ class kế thừa) như Java và C# được.</p>
+            <h2 class="heading">2. Tính kế thừa</h2>
+            <p>Trong Javascript không có từ khóa extends cũng như class, vậy nên Prototype (and Prototype chains) là sự triển khai tính kế thừa đối tượng của Javascript.</p>
+            <p>Ví dụ: </p>
+            <pre>function Person() {
+                this.firstName = 'Per';
+                this.lastName = 'son';
+                this.sayName = function() { return this.firstName + ' ' + this.lastName };
+              }
+              
+              // Viết một Constructor Function khác
+              function SuperMan(firstName, lastName) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+              }
+              
+              // Ta muốn SuperMan sẽ kế thừa các thuộc tính của Person
+              // Sử dụng prototype để kế thừa
+              SuperMan.prototype = new Person();
+              
+              // Tạo một object mới bằng Constructor Function 
+              var sm = new SuperMan('Khoa', 'Nguyen');
+              sm.sayName(); // Khoa Nguyen. Hàm này kế thừa từ prototype của Person</pre>
+              <p>Khi trình thông dịch JS kiểm tra thuộc tính đối tượng định nghĩa cho nó, trước tiên nó kiểm kiểm tra object trước. Nếu object không có thuộc tính được định nghĩa, nó sẽ kiểm tra prototype của đối tượng với cùng thuộc tính, nếu nó được tìm thấy, nó sẽ trả về thuộc tính đó. Nó khác với OOP trong Java là prototype object có thể truy cập vào đối tượng tạo ra trước vào sau bất kể khi nào có sự thay đổi nào trên prototype</p>
+              <pre>function Bread() {}; // constructor function
+                let brownBread = new Bread(); // object of type "Bread"
+                let sodaBread = new Bread(); // object of type "Bread"
+                Bread.prototype.toast = function() {
+                        console.log('I am toasting!');
+                    }; // set the function on a toast property on the prototype
+                // inherited prototype is accessible!
+                brownBread.toast(); // I am toasting!
+                sodaBread.toast(); // I am toasting!</pre>
+            <h2 class="heading">3. Tính đa hình và trừu tượng</h2>
+            <p>Đối với tính đa hình và tính trừu tượng, việc áp dụng 2 tính chất này trong Javascript là không rõ ràng. Do đó mình sẽ không trình bày trong bài viết này</p>
+            <p>Việc áp dụng lập trình hướng đối tượng vào JavaScript là tương đối khó. Tuy nhiên, nếu bạn nắm vững những kiến thức cơ bản mà mình đã trình bày trên đây, thì mình tin chắc rằng bạn sẽ dễ dàng tìm hiểu thêm và áp dụng lập trình hướng đối tượng trong JavaScript.</p>
+                <a href="./" class="btn">Quay lại</a>
         </div>
     </section>
 
     <section class="post-detail">
         <div class="post-contain">
             <img src="./images/post9.jpg" alt="">
-            <h2 class="heading" style="text-align: center;">Tạo Queue bằng JavaScript</h2>
-            <h2 class="heading">Giới thiệu</h2>
-            <p>Trong các cuộc trò chuyện về cấu trúc dữ liệu trong thế giới lập trình, thuật ngữ Queue được nhắc đến khá thường xuyên. Queue là một cấu trúc dữ liệu linear theo mô hình đầu vào đầu ra (FIFO),... tức là việc loại bỏ xảy ra ở phía trước và thêm vào xảy ra ở phía sau. Hãy tưởng tượng nó như điểm thanh toán tại cửa hàng tạp hóa. Khách hàng đến quầy thanh toán đầu tiên được phục vụ trước. Họ chỉ có thể tham gia hàng đợi từ phía sau hàng, và sau khi được phục vụ, họ rời đi từ phía trước hàng.</p>
-            <h2 class="heading">Cấu trúc dữ liệu Linear</h2>
-            <p>Cấu trúc dữ liệu linear là các loại cấu trúc dữ liệu trong đó các phần tử được lưu trữ theo thứ tự tuần tự. Các phần tử được tổ chức sao cho mỗi phần tử được liên kết trực tiếp với phần tử trước và phần tử sau của nó. Tuy nhiên, phần tử đầu tiên chỉ được liên kết với phần tử trước của nó và phần tử cuối cùng chỉ được liên kết với phần tử kế tiếp của nó.</p>
-            <p>Queue tuân thủ mô hình sắp xếp này, và chúng ta có thể thấy điều đó thông qua ví dụ về hàng đợi tại quầy thanh toán của cửa hàng tạp hóa của chúng ta. Mỗi khách hàng đến quầy thanh toán đại diện cho một phần tử. Khách hàng đầu tiên có một liên kết với khách hàng trước đó, khách hàng cuối cùng có một liên kết với khách hàng kế tiếp và mọi khách hàng khác ở giữa có một liên kết với khách hàng trước và khách hàng kế tiếp.</p>
-            <h2 class="heading">Các trường hợp sử dụng cho Queue</h2>
-            <p>Có một số trường hợp sử dụng cho hàng đợi trong lập trình và thực tế. Một số trong số chúng bao gồm những điều sau:</p>
-            <h2 class="heading">Máy in bàn</h2>
-            <p>Khi bạn gửi tài liệu đến máy in, chúng được in theo cùng thứ tự mà chúng được gửi và điều này rất hữu ích khi bạn cố gắng in các tài liệu theo một thứ tự cụ thể. Máy in đảm bảo các trang không bị lẫn lộn.</p>
-            <h2 class="heading">Cập nhật hàng đợi trình phát nhạc</h2>
-            <p>Đôi khi, trong khi chúng ta đang làm việc, chúng ta có những bài hát yêu thích để duy trì động lực. Chức năng hàng đợi của trình phát nhạc đảm bảo bạn nghe các bài hát được lựa chọn của mình theo cách mà nó được sắp xếp.</p>
-            <h2 class="heading">Hàng đợi dịch vụ khách hàng</h2>
-            <p>Nếu bạn đến ngân hàng để khiếu nại, họ họ sẽ để bạn xếp vào hàng đợi và người tiếp theo trong hàng sẽ không được gọi cho đến khi vấn đề của khách hàng hiện tại được giải quyết.</p>
-            <h2 class="heading">Chia sẻ tệp giữa hai quy trình</h2>
-            <p>Khi chuyển tệp từ một thiết bị sang thiết bị khác, các tệp được nhận ở đầu nhận theo cùng thứ tự mà chúng được gửi, bất kể thời gian mà một trong số chúng mất để hoàn thành.</p>
-            <h2 class="heading">Triển khai Queue</h2>
-            <p>Hàng đợi có thể được triển khai bằng bất kỳ ngôn ngữ lập trình nào, nhưng sự tập trung của chúng ta là vào cách tạo chúng bằng cách sử dụng JavaScript. Trong JavaScript, nó cũng có thể được triển khai theo hai cách: mảng- array và danh sách liên kết. Đối với bài viết này, chúng ta sẽ triển khai hàng đợi bằng cách sử dụng mảng-array .</p>
-            <p>Các thao tác trong Queue</p>
-            <p>Đây là một số thao tác cơ bản được thực hiện trên hàng đợi:</p>
+            <h2 class="heading" style="text-align: center;">Mọi Thứ Bạn Cần Biết Về Function - Javascript</h2>
+            <p>Các hàm (Function) là một trong những nền tảng cơ bản trong Javascript. Vậy bạn đã nắm hết những kiến thức về Function trong Javascript chưa?</p>
+            <h2 class="heading">Function(Hàm) là gì?</h2>
+            <p>Function (hàm, chức năng), gọi chung là subprogram (chương trình con) có thể được gọi ở bên ngoài hoặc bên trong chính nó.</p>
+            <p>Nó bao gồm tập hợp các câu lệnh gọi là function body. Các giá trị có thể truyền đến một hàm, và một hàm có thể trả về giá trị. </p>
+            <p>Bây giờ, với các ứng dụng hiện đại, các function có thể là một chương trình hoàn chỉnh, chứ không phải là khái niệm tổng quát như ''subprogram" nữa. Có sự khác nhau giữa function và procedure (thủ tục) rằng sự lý tưởng của function nên trả về một giá trị còn procedure thì không ( bây giờ điều này có thể thay đổi theo ngôn ngữ lập trình).</p>
+            <h2 class="heading">1. Khai báo hàm</h2>
+            <p>Để khai báo hàm, chúng ta dùng từ khóa function, theo sau nó là:</p>
             <ul>
-                <li>Enqueue</li>
-                <li>Dequeue</li>
-                <li>Peek</li>
-                <li>Đảo ngược một queue</li>
+                <li>Tên hàm</li>
+                <li>Danh sách các tham số truyền vào hàm, được đặt trong ngoặc đơn và cách nhau bởi dấu phẩy.</li>
+                <li>Các câu lệnh của JavaScript để tạo ra một hàm, được đặt trong ngoặc nhọn {...}.</li>
             </ul>
-            <p>Đối với việc triển khai các thao tác trên, chúng ta sẽ sử dụng một ES6 class và có các thao tác khác nhau như các phương pháp.</p>
-            <h2 class="heading">Enqueue</h2>
-            <p>Bước đầu tiên là khởi tạo lớp của chúng tôi với bộ nhớ riêng của nó (một mảng nơi các phần tử queue sẽ được lưu trữ):</p>
-            <pre> class Queue {
-                constructor() {
-                    this.queue = [];
+            <p>Ví dụ, để định nghĩa một hàm in ra chữ "Hello World" ở console:</p>
+            <pre>function sayHello () {
+                console.log("Hello World");
+              }</pre>
+            <h2 class="heading">2. Biểu thức hàm (Hàm trong biến)</h2>
+            <p>Trong khi việc khai báo hàm ở trên là một câu lệnh về mặt cú pháp, các hàm cũng có thể tạo ra bằng một biểu thức hàm (function expression). Một hàm như vậy có thể nặc danh; nó không cần phải có tên. Ví dụ, hàm sayHello ở trên có thể được khai báo như sau:</p>
+            <pre>const sayHello = function() {
+                console.log("Hello World");
+           }</pre>
+           <p>Tuy nhiên, một cái tên có thể được cung cấp trong một biểu thức hàm. Việc cung cấp tên cho phép hàm có thể chạy chính nó, hoặc có thể sử dụng hệ thống debug để nhận dạng hàm trong stack traces.</p>
+           <pre>const hello = function sayHello() {
+            console.log("Hello World");
+       }</pre>
+            <h2 class="heading">3. Các ràng buộc về tên hàm</h2>
+            <p>Javascript cũng giống như các ngôn ngữ khác nó cũng có các ràng buộc về tên hàm sau đây:</p>
+            <ul>
+                <li>Tên hàm phải được bắt đầu bằng chữ cái (a-z,A-Z) hoặc ký tự _.</li>
+                <li>Tên hàm không được bắt đầu bằng số, các ký tự khác ký tự _.</li>
+            </ul>
+            <h2 class="heading">Các loại hàm</h2>
+            <h2 class="heading">1. Hàm cơ bản</h2>
+            <p>Đây là dạng hàm cơ bản nhất trong Javascript, cú pháp có dạng như sau:</p>
+            <pre>function doSomeThing() {
+                // Do Something
+           }</pre>
+           <p>Trong đó: doSomeThing là tên của hàm bạn muốn đặt và function là từ khóa bắt buộc.</p>
+           <p>Ví dụ: Tạo hàm in ra tên website codelearn ở console</p>
+           <pre>function getWebsite() {
+            console.log("https://codelearn.io/");
+       }</pre>
+            <h2 class="heading">2. Hàm có tham số truyền vào</h2>
+            <p>Đây là một dạng hàm rất hay được sử dụng, cú pháp có dạng như sau:</p>
+            <pre>function funName(param_1, ..., pram_n) {
+                //code
+            }</pre>
+            <p>Trong đó:</p>
+            <ul>
+                <li>funName là tên của hàm các bạn muốn đặt.</li>
+                <li>param_1,...,pram_n là các tham số mà các bạn muốn truyền vào hàm(không giới hạn số lượng).</li>
+            </ul>
+            <p>VD: Tạo hàm tính tổng 2 số</p>
+            <pre>function getSum(a, b) {
+                console.log("Tổng: " + (a + b));
+            }</pre>
+            <h2 class="heading">3. Hàm có tham số mặc định</h2>
+            <p>Đây thực ra là dạng hàm có truyền tham số và đồng thời xét luôn giá trị mặc định cho các tham số đó. Cú pháp:</p>
+            <pre>function funName(param_1 = value_1, ..., pram_n = value_2) {
+                //code
+            }</pre>
+            <p>Trong đó:</p>
+            <ul>
+                <li>funName là tên của hàm các bạn muốn đặt.</li>
+                <li>param_1,...,pram_n là các tham số mà các bạn muốn truyền vào hàm(không giới hạn số lượng).</li>
+                <li>value_1,...,value_n là các giá trị tương ứng với các pram.</li>
+            </ul>
+            <p>VD: với hàm getSum ở trên mình sẽ xét tham số mặc định cho nó.</p>
+            <pre>function getSum(a = 5, b = 10) {
+                console.log("Tổng: " + (a + b));
+            }</pre>
+            <h2 class="heading">4. Hàm có và không trả về giá trị</h2>
+            <p>Trong javascript có hai loại hàm,đó là hàm có giá trị trả về và hàm không có giá trị trả về.</p>
+            <ul>
+                <li>Đối với hàm có giá trị trả về thì phải sử dụng từ khóa return</li>
+                <li>Và ngược lại đối với hàm không có giá trị trả về thì không có từ khóa return</li>
+            </ul>
+            <p>VD: khai báo hàm getSum ở trên là hàm có giá trị trả về.</p>
+            <pre>function getSum(a, b) {
+                return a + b;
+            }</pre>
+            <h2 class="heading">Gọi hàm</h2>
+            <p>Việc định nghĩa một hàm sẽ không thực thi nó. Định nghĩa một hàm đơn giản chỉ là đặt tên cho hàm và chỉ định những việc cụ thể sẽ làm khi hàm đó được gọi.</p>
+            <p>Ví dụ, nếu bạn định nghĩa hàm sayHello, bạn có thể gọi nó như sau:</p>
+            <pre>function sayHello () {
+                console.log("Hello World");
+              }
+              
+              sayHello(); // Gọi hàm</pre>
+              <p>Câu lệnh trên gọi hàm sayHello, kết quả trả về chữ "Hello World" tại console.</p>
+              <p>Các hàm phải đặt trong phạm vi (in scope) khi nó được gọi, nhưng việc khai báo hàm có thể được hoisted (câu lệnh khai báo hàm xuất hiện bên dưới dòng gọi hàm trong đoạn code), như ví dụ này:</p>
+              <pre>console.log(getAreaOfSquare(5));
+
+                /* ... */
+                
+                function getAreaOfSquare(n) { 
+                    return n*n;
+                } </pre>
+                <p>Phạm vi (scope) của một hàm là khoảng không gian bên trong hàm mà nó được khai báo (hoặc là cả chương trình, nếu nó được khai bảo ở top level, tức là nó không nằm trong hàm nào khác).</p>
+                <p>Lưu ý: Điều này chỉ đúng khi định nghĩa một hàm bằng cách sử dụng các cú pháp ở trên (ví dụ function funcName(){}). Điều này có nghĩa rằng function hoisting chỉ hoạt động với cách khai báo hàm thông thường (function declarations) - function hoisting không hoạt động đối với hàm được khai báo bằng biểu thức hàm (function expression). Ví dụ, đoạn code dưới đây sẽ không hoạt động:</p>
+                <pre>console.log(getAreaOfSquare); // ReferenceError: getAreaOfSquare is not defined
+                    console.log(getAreaOfSquare(5)); // ReferenceError: getAreaOfSquare is not defined
+                    getAreaOfSquare = function (n) {
+                      return n * n;
+                    }</pre>
+            <h2 class="heading">Một hàm có thể gọi chính nó</h2>
+            <p>Ví dụ, đây là một hàm tính giai thừa đệ quy:</p>
+            <pre>function factorial(n){
+                if ((n == 0) || (n == 1))
+                  return 1;
+                else
+                  return (n * factorial(n - 1));
+              }</pre>
+              <p>Bạn có thể tính giai thừa của 1 tới 3 như sau:</p>
+              <pre>var a, b, c;
+                a = factorial(1); // a gets the value 1
+                b = factorial(2); // b gets the value 2
+                c = factorial(3); // c gets the value 6</pre>
+                <p>Có những cách khác để gọi hàm. Có nhiều trường hợp mà tại đó một hàm cần phải được gọi một cách tự động, hoặc làm thay đổi số lượng đối số truyền vào một hàm, hoặc trong trường hợp mà việc gọi hàm cần được gắn với một object nhất định được quyết định tại thời điểm runtime.</p>
+                <p>Điều đó lại hóa ra là các hàm tự bản thân chúng là các object, và kết quả là, những object này có các phương thức. Một trong số chúng, phương thức apply(), có thể được dùng để đạt được mục tiêu này.</p>
+            <h2 class="heading">Phạm vi của hàm (Function Scope)</h2>
+            <p>Các biến được định nghĩa bên trong một hàm không thể được truy cập từ nơi nào khác bên ngoài hàm, bởi vì biến đó được định nghĩa chỉ trong phạm vi của hàm. Tuy nhiên, một hàm có thể truy cập đến mọi biến và mọi hàm khác trong cùng phạm vi mà nó được định nghĩa.</p>
+            <p>Nói cách khác, một hàm được định nghĩa trong phạm vi global có thể truy cập tới tất cả các biến đã được định nghĩa trong phạm vi global. Một hàm được định nghĩa bên trong một hàm khác có thể truy cập đến tất cả biến được định nghĩa bên trong hàm cha của nó, và bất cứ biến nào khác mà hàm cha của nó có quyền truy cập đến. Các bạn có thể tham khảo ví dụ dưới đây:</p>
+            <pre>// Các biến sau được định nghĩa trong phạm vi global scope
+                var num1 = 20,
+                    num2 = 3,
+                    name = "Khoa";
+                
+                // Hàm này được định nghĩa trong phạm vi global scope
+                function multiply() {
+                  return num1 * num2;
                 }
-            }
-            </pre>
-            <p>Các dòng được thêm vào đoạn code của chúng ta đại diện cho một phương thức của lớp Queue. Nó xử lý một thao tác mà thêm một mục mới vào đối tượng mảng được khởi tạo bằng phương thức constructor.</p>
-            <p>Phương thức .enqueue() chấp nhận một đối số phần tử và sau đó thêm nó vào this.queue bằng phương thức mảng .push().</p>
-            <h2 class="heading">Dequeue</h2>
-            <p>Thuật ngữ này đề cập đến việc loại bỏ một phần tử mới từ hàng đợi. Một lần nữa, phương thức mảng .shift() giải quyết điều này cho chúng ta một cách dễ dàng.</p>
-            <pre>
-                class Queue {
-                    constructor() {
-                        this.queue = [];
+                
+                multiply(); // Returns 60
+                
+                // Một ví dụ hàm lồng nhau
+                function getScore () {
+                  var num1 = 50,
+                      num2 = 50;
+                  
+                  function add() {
+                    return name + " scored " + (num1 + num2);
+                  }
+                  
+                  return add();
+                }
+                
+                getScore(); // Returns "Khoa scored 100"</pre>
+            <h2 class="heading">Các tham số của Function</h2>
+            <p>Kể từ ES6, xuất hiện 2 dạng tham số mới: default parameters và rest parameters</p>
+            <h2 class="heading">1. Default parameters</h2>
+            <p>Trong JavaScript, các tham số của function được mặc định là undefined. Tuy nhiên, trong một số trường hợp nó có thể hữu ích để thiết lập một giá trị mặc định khác. Đây chính xác là điều mà default parameters sẽ làm.</p>
+            <h2 class="heading">Khi không có default parameters (trước ES6)</h2>
+            <p>Trong quá khứ, cách thông thường để thiết lập các giá trị mặc định là kiểm định giá trị của các tham số bên trong body của function và gán giá trị cho nó nếu nó là undefined.</p>
+            <p>Trong ví dụ sau, nếu không có giá trị nào được truyền cho b, giá trị của nó sẽ là undefined khi thực hiện tính toán a*b, và việc gọi hàm multiply sẽ trả về NaN. Tuy nhiên, điều này bị ngăn chặn bởi dòng thứ 2 trong ví dụ này:</p>
+            <pre>function multiply(a, b) {
+                b = typeof b !== 'undefined' ?  b : 1;
+              
+                return a*b;
+              }
+              
+              multiply(5); // 5</pre>
+              <h2 class="heading">Khi có default parameters (sau ES6)</h2>
+              <p>Với default parameters, việc kiểm tra thủ công bên trong body của function không còn cần thiết. Bạn có thể đơn giản chỉ là đặt 1 vào làm giá trị mặc định cho b ngay tại head của function:</p>
+              <pre>function multiply(a, b = 1) {
+                return a*b;
+              }
+              
+              multiply(5); // 5</pre>
+            <h2 class="heading">2. Rest parameters</h2>
+            <p>Cú pháp rest parameter cho phép chúng ta dùng 1 mảng để đại diện cho số lượng vô hạn các đối số.</p>
+              <p>Trong ví dụ sau, hàm multiply sử dụng rest parameters để thu thập các đối số kể từ đối số hứ hai trở về đến hết. Hàm này sau đó sẽ nhân những đối số này với đối số đầu tiên.</p>
+              <pre>function multiply(multiplier, ...theArgs) {
+                return theArgs.map(x => multiplier * x);
+              }
+              
+              var arr = multiply(2, 1, 2, 3);
+              console.log(arr); // [2, 4, 6]</pre>
+            <h2 class="heading">Arrow Function</h2>
+            <p>Trong ES6, arrow function là một cú pháp mới dùng để viết các hàm trong JavaScript. Nó giúp tiết kiệm thời gian phát triển và đơn giản hóa phạm vi function (function scope).</p>
+            <p>Arrow function - còn được gọi là "fat arrow", là cú pháp được mượn từ CoffeeScript (một ngôn ngữ chuyển tiếp), cú pháp này là cách ngắn gọn hơn dùng để viết function. Ở đây sử dụng kí tự =>, trông giống như một mũi tên "béo". Arrow function là một hàm vô danh và nó thay đổi cách this bind đến function. Arrow function làm code của ta trông ngắn gọn hơn, giúp đơn giản hóa function scoping cũng như từ khóa this.</p>
+            <p>Dưới đây là 1 vài ví dụ về việc sử dụng Arrow fucntion trong Javascript</p>
+            <h2 class="heading">1. Trường hợp có nhiều tham số</h2>
+            <pre>// (param1, param2, paramN) => expression 
+ 
+                // ES5 
+                var multiply = function(x, y) {
+                    return x * y;
+                }; 
+                 
+                // ES6 
+                var multiply = (x, y) => { return x * y };</pre>
+                <p>Ví dụ trên cho cùng một kết quả, tuy nhiên cú pháp với arrow function tốn ít dòng mã hơn. Trong trường hợp chỉ có một biểu thức thì không cần tới dấu ngoặc nhọn: Ví dụ trên có thể viết lại như sau:</p>
+                <pre>var multiply = (x, y) => x * y ;</pre>
+            <h2 class="heading">2. Trường hợp có 1 tham số</h2>
+            <p>Dấu ngoặc đơn là không bắt buộc khi chỉ có 1 tham số.</p>
+            <pre>//ES5 
+                var phraseSplitterEs5 = function phraseSplitter(phrase) { 
+                    return phrase.split(' '); 
+                }; 
+                 
+                //ES6 
+                var phraseSplitterEs6 = phrase => phrase.split(" "); 
+                 
+                console.log(phraseSplitterEs6("Love Codelearn"));  // ["Love", "Codelearn"]</pre>
+            <h2 class="heading">3. Trường hợp không có tham số</h2>
+            <p>Dấu ngoặc đơn là bắt buộc khi không có tham số.</p>
+            <pre>// ES5
+                var hello = function sayHello() {
+                     console.log("Hello World");
+                }
+                
+                // ES6
+                var hello = () => { console.log("Hello World"); }
+                
+                hello(); // Hello World</pre>
+                <h2 class="heading">Closures</h2>
+                <p>Closures là một trong những chức năng quyền lực nhất của JavaScript. JavaScript cho phép lồng các function vào nhau, và cấp quyền cho function con, để function con có toàn quyền truy cập vào tất cả các biến và function được định nghĩa bên trong function cha (và tất cả biến và function mà function cha được cấp quyền truy cập đến).</p>
+                <p>Tuy nhiên, function cha không có quyền truy cập đến các biến và function được định nghĩa bên trong function con. Điều này tạo nên một dạng bảo mật khép kín cho các biến của function con.</p>
+                <p>Bên cạnh đó, vì function con có quyền truy cập đến scope của function cha, các biến và function được định nghĩa bên trong function cha sẽ vẫn tồn tại dù việc thực thi function cha đã kết thúc, nếu function con xoay sở để tồn tại lâu hơn thời gian sống của function cha. Một closure được tạo ra khi một function con bằng cách nào đó trở nên khả dụng với bất kỳ scope nào bên ngoài function cha.</p>
+                <p>Hãy xem các ví dụ sau đây để hiểu hơn về Closures</p>
+                <p>VD1:</p>
+                <pre>function numberGenerator() {
+                    // Local “free” variable that ends up within the closure
+                    var num = 1;
+                    function checkNumber() {
+                      console.log(num);
                     }
-                } 
-                enqueue(element) {
-                    this.queue.push(element);
-                }
-                dequeue() {
-                    return this.dequeue.shift();
-                }
-            </pre>
-            <p>Chúng ta đã thêm một phương thức mới .dequeue(). Phương thức này không chấp nhận bất kỳ đối số nào khác phương thức trước đó. Nó trả về một phần tử từ phía trước của hàng đợi và cũng loại bỏ nó bằng phương thức mảng .shift().</p>
-            <h2 class="heading">Kết luận</h2>
-            <p>Đây là tóm tắt về những gì đã được bàn trong bài viết này:</p>
-            <p>Chúng tôi giải thích khái niệm về queue (FIFO) và cách chúng được áp dụng trong thế giới thực.
-                Chúng tôi đã tạo ra một class và thực hiện các thao tác hàng đợi khác nhau (enqueue, dequeue, peek, reverse).</p>
-                <p>Đó là tất cả. Chúng tôi đã triển khai thành công một queue và các thao tác cơ bản của nó bằng JavaScript.</p>
-                <a href="./index.html" class="btn">Quay lại trang chủ</a>
+                    num++;
+                  
+                    return checkNumber;
+                  }
+                  
+                  var number = numberGenerator();
+                  number(); // 2</pre>
+                  <p>Trong ví dụ trên, hàm numberGenerator() tạo ra một biến local num và checkNumber() (một hàm in ra num trong console). Hàm checkNumber() không có bất kỳ biến local nào trong nó. Tuy nhiên, nó có quyền truy cập vào các biến bên ngoài function, bởi vì numberGenerator() là một closure. Do đó, nó có thể sử dụng biến num được khai báo trong numberGenerator() để log num trong console sau khi numberGenerator() được trả lại.</p>
+                  <p>VD2:</p>
+                  <pre>function sayHello() {
+                    var say = function() { console.log(hello); }
+                    // Local variable that ends up within the closure
+                    var hello = 'Hello, world!';
+                  
+                    return say;
+                  }
+                  var sayHelloClosure = sayHello();
+                  sayHelloClosure(); // ‘Hello, world!’</pre>
+                  <p>Chú ý, biến hello được khai báo sau anonymous function nhưng vẫn có thể truy cập biến hello. Điều này là do biến hello đã được khai báo trong function scope tại thời điểm được tạo ra, làm cho nó có sẵn khi anonymous function được thực thi.</p>
+            <h2 class="heading">Callback Function</h2>
+            <p>Callback function có thể được hiểu nôm na như sau: callback tức là ta truyền một đoạn code (Hàm A) này vào một đoạn code khác (Hàm B). Tới một thời điểm nào đó, Hàm A sẽ được hàm B gọi lại (callback). Javascript là một ngôn ngữ lập trình hướng sự kiện và bất đồng bộ nên callback function đóng vai trò rất quan trọng, bạn sẽ truyền một callback function vào các sự kiện và xử lý bất đồng bộ đó..</p>
+                <a href="#" class="btn">Quay lại</a>
         </div>
     </section>
 
